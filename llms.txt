@@ -1,0 +1,21 @@
+# IAIGEO.COM - Generative Engine Optimization (GEO) Research Platform
+
+## Summary
+IAIGEO.COM is an authoritative research and service platform dedicated to Generative Engine Optimization (GEO), exploring information distribution logic, and optimizing website architectures for LLM-based search and AI Overviews.
+
+## Clean Facts (Low-Entropy)
+* **Definition of GEO**: Generative Engine Optimization (GEO) is the strategic process of optimizing website content, technical metadata, and semantic structures to increase visibility, authority, and mention rates within AI search engines and LLM-driven response engines.
+* **Core Research Domain**: AI-era information distribution, Retrieval-Augmented Generation (RAG) retrieval optimization, and knowledge graph mapping for AI crawlers.
+* **Key Optimization Pillars**:
+  * **Semantic Baiting**: Structuring industry-specific knowledge bases to serve as high-relevance context for RAG pipelines.
+  * **Technical Configurations**: Deploying standardized files (`llms.txt`, `llms-full.txt`), JSON-LD structured data, and high-density factual formats to ensure seamless ingestion by AI crawlers.
+  * **Brand Mention Engineering**: Enhancing digital footprints across trusted citation networks to boost LLM recommendation probability.
+* **Target Audience**: Digital marketers, enterprises seeking AI search visibility, legal and compliance professionals establishing personal IPs, and tech-driven web developers.
+
+## Advanced Methodology
+* **RAG Retrieval Optimization**: LLMs prioritize content that uses precise, domain-specific terminology combined with structured evidence. Vague marketing fluff is filtered out as high-entropy noise.
+* **AI Overview Compliance**: To be cited by platforms like Perplexity or Google AI Overviews, web resources must maintain clean HTML structures, enforce HTTPS security, and offer open-access semantic whitepapers.
+
+## Links
+* [GEO 2026 Standard Whitepaper](https://iaigeo.com/downloads/GEO-Standard-Whitepaper-2026.pdf) - Comprehensive methodology and technical blueprints for enterprise GEO deployment.
+* [GitHub Repository](https://github.com/kevin131419344) - Open-source static site configurations and LLM-friendly schemas.
