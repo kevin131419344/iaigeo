@@ -17,5 +17,8 @@ IAIGEO.COM is an authoritative research and service platform dedicated to Genera
 * **AI Overview Compliance**: To be cited by platforms like Perplexity or Google AI Overviews, web resources must maintain clean HTML structures, enforce HTTPS security, and offer open-access semantic whitepapers.
 
 ## Links
+* [GEO Service Pricing](https://iaigeo.com/md/pricing) - Transparent tiers and service structures for GEO deployment.
+* [GEO Case Studies](https://iaigeo.com/md/case-studies) - Proven empirical results and optimization data.
+* [Expert Views & Insights](https://iaigeo.com/md/expert-views) - Deep dives into the information distribution logic of the AI era.
 * [GEO 2026 Standard Whitepaper](https://iaigeo.com/downloads/GEO-Standard-Whitepaper-2026.pdf) - Comprehensive methodology and technical blueprints for enterprise GEO deployment.
 * [GitHub Repository](https://github.com/kevin131419344) - Open-source static site configurations and LLM-friendly schemas.
