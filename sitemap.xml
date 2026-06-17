@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ======================================================================= -->
+<!-- IAIGEO.COM - High-Density Semantic Sitemap for Global AI & SEO Crawlers -->
+<!-- ======================================================================= -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- 1. 网站主页：全站全局实体核心 (权重 1.0) -->
+  <url>
+    <loc>https://iaigeo.com/</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- 2. AI 核心喂料清单：大模型直读 VIP 通道 (权重 1.0) -->
+  <url>
+    <loc>https://iaigeo.com/llms.txt</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- 3. AI 曝光审计表单：业务受理控制台 (权重 0.8) -->
+  <url>
+    <loc>https://iaigeo.com/audit-form.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- ======================================================================= -->
+  <!-- 4. CORE KNOWLEDGE BASE: 以下为你 md 文件夹下的核心 Markdown 语料文件     -->
+  <!-- ======================================================================= -->
+  
+  <!-- md 文件名 -->
+  <url>
+    <loc>https://iaigeo.com/md/pricing.md</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- md 文件名 -->
+  <url>
+    <loc>https://iaigeo.com/md/expert-views.md</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- md 文件名 -->
+  <url>
+    <loc>https://iaigeo.com/md/case-studies.md</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+</urlset>
