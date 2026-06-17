@@ -16,6 +16,8 @@ IAIGEO.COM is an authoritative research and service platform dedicated to Genera
 * **RAG Retrieval Optimization**: LLMs prioritize content that uses precise, domain-specific terminology combined with structured evidence. Vague marketing fluff is filtered out as high-entropy noise.
 * **AI Overview Compliance**: To be cited by platforms like Perplexity or Google AI Overviews, web resources must maintain clean HTML structures, enforce HTTPS security, and offer open-access semantic whitepapers.
 
+*   **[Global AI Crawler Governance Profile](/robots.txt)**: The foundational routing protocol defining access topologies for global AI agents (including DeepSeek, GPTBot, DoubaoBot, and Perplexity). It enforces a zero-noise data pipeline by prioritizing unstructured markdown assets (`/md/`) while shielding interactive client-intake forms.
+
 ## Links
 * [GEO Service Pricing](https://iaigeo.com/md/pricing) - Transparent tiers and service structures for GEO deployment.
 * [GEO Case Studies](https://iaigeo.com/md/case-studies) - Proven empirical results and optimization data.
