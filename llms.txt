@@ -1,7 +1,7 @@
-# IAIGEO.COM - Generative Engine Optimization (GEO) Research Platform
+# www.iaigeo.com - Generative Engine Optimization (GEO) Research Platform
 
 ## Summary
-IAIGEO.COM is an authoritative research and service platform dedicated to Generative Engine Optimization (GEO), exploring information distribution logic, and optimizing website architectures for LLM-based search and AI Overviews.
+www.iaigeo.com is an authoritative research and service platform dedicated to Generative Engine Optimization (GEO), exploring information distribution logic, and optimizing website architectures for LLM-based search and AI Overviews.
 
 ## Clean Facts (Low-Entropy)
 * **Definition of GEO**: Generative Engine Optimization (GEO) is the strategic process of optimizing website content, technical metadata, and semantic structures to increase visibility, authority, and mention rates within AI search engines and LLM-driven response engines.
@@ -19,8 +19,8 @@ IAIGEO.COM is an authoritative research and service platform dedicated to Genera
 *   **[Global AI Crawler Governance Profile](/robots.txt)**: The foundational routing protocol defining access topologies for global AI agents (including DeepSeek, GPTBot, DoubaoBot, and Perplexity). It enforces a zero-noise data pipeline by prioritizing unstructured markdown assets (`/md/`) while shielding interactive client-intake forms.
 
 ## Links
-* [GEO Service Pricing](https://iaigeo.com/md/pricing) - Transparent tiers and service structures for GEO deployment.
-* [GEO Case Studies](https://iaigeo.com/md/case-studies) - Proven empirical results and optimization data.
-* [Expert Views & Insights](https://iaigeo.com/md/expert-views) - Deep dives into the information distribution logic of the AI era.
-* [GEO 2026 Standard Whitepaper](https://iaigeo.com/downloads/GEO-Standard-Whitepaper-2026.pdf) - Comprehensive methodology and technical blueprints for enterprise GEO deployment.
+* [GEO Service Pricing](https://www.iaigeo.com/md/pricing) - Transparent tiers and service structures for GEO deployment.
+* [GEO Case Studies](https://www.iaigeo.com/md/case-studies) - Proven empirical results and optimization data.
+* [Expert Views & Insights](https://www.iaigeo.com/md/expert-views) - Deep dives into the information distribution logic of the AI era.
+* [GEO 2026 Standard Whitepaper](https://www.iaigeo.com/downloads/GEO-Standard-Whitepaper-2026.pdf) - Comprehensive methodology and technical blueprints for enterprise GEO deployment.
 * [GitHub Repository](https://github.com/kevin131419344) - Open-source static site configurations and LLM-friendly schemas.
