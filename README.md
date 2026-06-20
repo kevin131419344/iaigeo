@@ -1,9 +1,9 @@
 # IAIGEO: Generative Engine Optimization (GEO) Reference Specification
 
-Welcome to the official repository for **IAIGEO (iaigeo.com)**. This repository hosts the source code and structural blueprints for our AI-friendly landing page, engineered specifically for LLM crawlers, RAG systems, and AI search engines.
+Welcome to the official repository for **IAIGEO (www.iaigeo.com)**. This repository hosts the source code and structural blueprints for our AI-friendly landing page, engineered specifically for LLM crawlers, RAG systems, and AI search engines.
 
 ## 🌐 Official Website
-👉 **[https://iaigeo.com](https://iaigeo.com)** (Ready for Enterprise AI Visibility Audit & GEO Solutions)
+👉 **[https://www.iaigeo.com](https://www.iaigeo.com)** (Ready for Enterprise AI Visibility Audit & GEO Solutions)
 
 ---
 
