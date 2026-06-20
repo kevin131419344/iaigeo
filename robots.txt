@@ -62,4 +62,4 @@ Allow: /md/
 Allow: /llms.txt
 
 # 网站地图索引
-Sitemap: https://iaigeo.com/sitemap.xml
+Sitemap: https://www.iaigeo.com/sitemap.xml
