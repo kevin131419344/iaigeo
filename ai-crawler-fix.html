@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAIGEO | AI爬虫修复服务 - 让AI真正看到你的高质量内容</title>
+    
+    <link rel="canonical" href="https://www.iaigeo.com/ai-crawler-fix.html"> 
+    <link rel="alternate" hreflang="zh-CN" href="https://www.iaigeo.com/ai-crawler-fix.html" />
+    <link rel="alternate" hreflang="en" href="https://www.iaigeo.com/ai-crawler-fix-en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.iaigeo.com/ai-crawler-fix-en.html" />
+
+    <link rel="icon" type="image/svg+xml" href="/geo-logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/geo-favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/geo-favicon-16.png">
+    <link rel="shortcut icon" href="/geo-favicon.ico">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Noto+Sans+SC:wght@300;400;700&display=swap');
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #0a0a0c;
+            color: #e4e4e7;
+        }
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #e4e4e7 30%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fbbf24 30%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tech-card {
+            background: rgba(20, 20, 25, 0.7);
+            border: 1px solid rgba(63, 63, 70, 0.4);
+        }
+        .tech-card:hover {
+            border-color: rgba(251, 191, 36, 0.5);
+            transition: all 0.3s ease;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.iaigeo.com/#organization",
+          "name": "IAIGEO",
+          "url": "https://www.iaigeo.com",
+          "logo": "https://www.iaigeo.com/logo.jpg",
+          "description": "IAIGEO 专注解决 AI 机器人访问权限问题，让你的网站从“被禁止”变为“被欢迎”。"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.iaigeo.com/ai-crawler-fix.html#webpage",
+          "url": "https://www.iaigeo.com/ai-crawler-fix.html",
+          "name": "AI爬虫修复服务销售页面 - IAIGEO"
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="selection:bg-yellow-500 selection:text-black">
+
+    <nav class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="code-font text-2xl font-bold tracking-wider text-white">IAI<span class="text-yellow-500">GEO</span><span class="text-xs text-zinc-500 font-normal">.com</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-zinc-400">
+                <a href="#problem" class="hover:text-yellow-500 transition">隐形阻挡</a>
+                <a href="#solution" class="hover:text-yellow-500 transition">核心价值</a>
+                <a href="#process" class="hover:text-yellow-500 transition">服务流程</a>
+                <a href="#pricing" class="hover:text-yellow-500 transition">服务定价</a>
+                <a href="#faq" class="hover:text-yellow-500 transition">常见问题</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button onclick="switchLang('zh')" id="btn-zh" class="text-xs font-bold text-yellow-500 border border-yellow-500/30 px-2 py-0.5 rounded bg-yellow-500/10">中文</button>
+                <button onclick="switchLang('en')" id="btn-en" class="text-xs font-bold text-zinc-500 border border-zinc-800 px-2 py-0.5 rounded">EN</button>
+                <a href="#contact" class="bg-yellow-500 text-black px-4 py-2 rounded text-sm font-bold hover:bg-yellow-400 transition hidden sm:inline-block">立即预约诊断</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="lang-zh" class="lang-section">
+        <header class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
+            <div class="inline-block code-font text-xs bg-zinc-800/60 border border-zinc-700 text-yellow-500 px-3 py-1 rounded-full mb-6 tracking-widest">
+                AI CRAWLER REPAIR SERVICE / 基于 Common Crawl Foundation 官方指南
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight gradient-text">
+                你的网站被AI爬虫屏蔽了？<br>
+                <span class="gold-gradient-text">我们帮你彻底修复，让AI真正看到你的内容</span>
+            </h1>
+            <p class="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto font-light leading-relaxed mb-10">
+                从 robots.txt、CDN、WAF 隐形阻挡中解救出来，快速恢复被 Common Crawl、GPTBot 等主流AI训练爬虫的收录权限，让你的内容有机会进入AI训练数据和答案引用。
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 items-center">
+                <a href="#contact" class="bg-zinc-100 text-black px-8 py-3.5 rounded font-bold hover:bg-white transition text-center shadow-lg">立即获取免费诊断 →</a>
+                <span class="text-xs text-zinc-500 code-font">已帮助近百+网站恢复AI可见性</span>
+            </div>
+        </header>
+
+        <section id="problem" class="max-w-6xl mx-auto px-6 py-16 border-t border-zinc-900">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-white">为什么你的内容AI完全看不到？</h2>
+                <p class="text-zinc-500 mt-2">即使在 Google 排名很好，也可能在 ChatGPT、Claude、Perplexity、Gemini 中完全缺失。</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="tech-card p-8 rounded-lg">
+                    <h3 class="text-yellow-500 font-bold mb-3 flex items-center">⚠️ 入口处的隐形阻挡</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        最常见的原因不是内容不够好，而是AI爬虫在入口就被悄悄挡住了。常见隐形阻挡包括：
+                    </p>
+                    <ul class="mt-4 space-y-2 text-xs text-zinc-500 code-font">
+                        <li>• CDN/WAF 默认开启的“Block AI Bots”规则</li>
+                        <li>• robots.txt 中无意添加的 Disallow</li>
+                        <li>• 托管服务商自动注入的AI爬虫屏蔽</li>
+                        <li>• 服务器 User-Agent 过滤</li>
+                    </ul>
+                </div>
+                <div class="tech-card p-8 rounded-lg border-red-500/20 flex flex-col justify-center">
+                    <h3 class="text-red-400 font-bold mb-2 flex items-center">✕ 严重后果</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        结果：你的高质量内容无法进入AI训练数据集，自然无法被模型引用。损失掉的是整个AI时代的流量红利与心智资产。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="bg-zinc-950 py-16 border-t border-b border-zinc-900">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <span class="code-font text-xs text-yellow-500 uppercase tracking-widest">Our Solution</span>
+                <h2 class="text-3xl font-bold text-white mt-1 mb-6">针对性强、见效快的AI爬虫专项修复服务</h2>
+                <p class="text-zinc-400 font-light leading-relaxed max-w-2xl mx-auto mb-8">
+                    我们不是泛泛的SEO优化。我们专注解决 AI 机器人访问权限问题，让你的网站从“被禁止”变为“被欢迎”，重新打开通往 Common Crawl 和各大AI模型的通道。
+                </p>
+                <div class="inline-block bg-zinc-900 border border-zinc-800 rounded px-6 py-3 code-font text-sm text-yellow-500">
+                    核心价值：修复访问权限 → 恢复被抓取 → 逐步提升AI引用概率
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="max-w-5xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-white">4步修复，2-4周见效</h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6 mb-16">
+                <div class="tech-card p-6 rounded border-zinc-800">
+                    <div class="code-font text-yellow-500 font-bold text-xl mb-2">01</div>
+                    <h4 class="text-sm font-bold text-zinc-200 mb-2">深度诊断 (1-2天)</h4>
+                    <p class="text-zinc-500 text-xs leading-relaxed">检查 robots.txt、CDN/WAF、服务器配置，确认真实阻挡来源，并验证 Common Crawl Index 当前状态。</p>
+                </div>
+                <div class="tech-card p-6 rounded border-zinc-800">
+                    <div class="code-font text-yellow-500 font-bold text-xl mb-2">02</div>
+                    <h4 class="text-sm font-bold text-zinc-200 mb-2">定制修复方案 (3-7天)</h4>
+                    <p class="text-zinc-500 text-xs leading-relaxed">提供精确的 robots.txt 修改、CDN规则调整、WAF白名单配置等方案，并协助执行。</p>
+                </div>
+                <div class="tech-card p-6 rounded border-zinc-800">
+                    <div class="code-font text-yellow-500 font-bold text-xl mb-2">03</div>
+                    <h4 class="text-sm font-bold text-zinc-200 mb-2">修复验证 (7-14天)</h4>
+                    <p class="text-zinc-500 text-xs leading-relaxed">使用真实 CCBot User-Agent 复测, 确保返回200状态码，并监控 CC Index 更新。</p>
+                </div>
+                <div class="tech-card p-6 rounded border-zinc-800">
+                    <div class="code-font text-yellow-500 font-bold text-xl mb-2">04</div>
+                    <h4 class="text-sm font-bold text-zinc-200 mb-2">报告交付与支持</h4>
+                    <p class="text-zinc-500 text-xs leading-relaxed">完整前后对比报告 + 30天免费复查。</p>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900/50 border border-zinc-800/80 rounded-lg p-8">
+                <h3 class="text-lg font-bold text-zinc-200 mb-4 flex items-center">
+                    <span class="text-yellow-500 mr-2">📦</span> 服务成果 (What You Will Get)
+                </h3>
+                <div class="grid sm:grid-cols-2 gap-4 text-sm text-zinc-400">
+                    <div class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> 专业《AI爬虫阻挡诊断报告》</div>
+                    <div class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> 详细、可直接执行的修复配置文档</div>
+                    <div class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> 修复前后验证截图与日志</div>
+                    <div class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> 一页式修复效果 Scorecard</div>
+                    <div class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> 30天后续跟进服务</div>
+                    <div class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> AI可见性提升建议 (可选升级路径)</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="max-w-5xl mx-auto px-6 py-16 border-t border-zinc-900">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-white">标准化服务交付矩阵</h2>
+                <p class="text-zinc-500 text-sm mt-2">限时福利：前30名客户享免费初步诊断</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="tech-card p-8 rounded-lg flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-zinc-200 mb-1">基础版</h3>
+                        <div class="code-font text-2xl font-bold text-yellow-500 mb-4">¥4,800</div>
+                        <p class="text-zinc-400 text-xs border-t border-zinc-800 pt-4 mb-6">包含：诊断 + 修复方案 + 验证报告。提供配置指导，不需要提供服务器权限。</p>
+                    </div>
+                    <a href="#contact" class="block text-center bg-zinc-800 text-white py-2 rounded text-sm hover:bg-zinc-700 transition">立即预约</a>
+                </div>
+                <div class="tech-card p-8 rounded-lg border-yellow-500/40 flex flex-col justify-between relative">
+                    <div class="absolute top-0 right-0 bg-yellow-500 text-black text-[10px] font-bold px-2 py-0.5 code-font">RECOMMENDED</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-zinc-200 mb-1">标准版</h3>
+                        <div class="code-font text-2xl font-bold text-yellow-500 mb-4">¥9,800</div>
+                        <p class="text-zinc-400 text-xs border-t border-zinc-800 pt-4 mb-6">包含：诊断 + 协助执行 + 完整报告 + 30天跟进。可提供远程协助协助执行（需您授权）。</p>
+                    </div>
+                    <a href="#contact" class="block text-center bg-yellow-500 text-black py-2 rounded text-sm font-bold hover:bg-yellow-400 transition">立即预约</a>
+                </div>
+                <div class="tech-card p-8 rounded-lg flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-zinc-200 mb-1">企业版</h3>
+                        <div class="code-font text-2xl font-bold text-yellow-500 mb-4">¥18,000 <span class="text-xs font-normal text-zinc-500">起</span></div>
+                        <p class="text-zinc-400 text-xs border-t border-zinc-800 pt-4 mb-6">针对多域名客户及大型平台定制。提供长期多维度的AI可见性护航服务。</p>
+                    </div>
+                    <a href="#contact" class="block text-center bg-zinc-800 text-white py-2 rounded text-sm hover:bg-zinc-700 transition">定制洽谈</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="max-w-4xl mx-auto px-6 py-16 border-t border-zinc-900">
+            <h2 class="text-2xl font-bold text-center text-white mb-10">常见问题 (FAQ)</h2>
+            <div class="space-y-6">
+                <div class="bg-zinc-900/30 p-5 rounded border border-zinc-900">
+                    <h4 class="text-zinc-200 font-bold text-sm mb-2">Q: 修复后多久能被AI引用？</h4>
+                    <p class="text-zinc-400 text-xs leading-relaxed">A: 访问权限修复通常几天内生效，被抓取和进入训练数据需要1-3个爬取周期，引用效果视内容质量和模型更新而定。我们会帮你设置合理预期。</p>
+                </div>
+                <div class="bg-zinc-900/30 p-5 rounded border border-zinc-900">
+                    <h4 class="text-zinc-200 font-bold text-sm mb-2">Q: 需要提供服务器权限吗？</h4>
+                    <p class="text-zinc-400 text-xs leading-relaxed">A: 基础版不需要，我们提供配置指导；标准版可远程协助（需您授权）。</p>
+                </div>
+                <div class="bg-zinc-900/30 p-5 rounded border border-zinc-900">
+                    <h4 class="text-zinc-200 font-bold text-sm mb-2">Q: 适用于哪些网站？</h4>
+                    <p class="text-zinc-400 text-xs leading-relaxed">A: 新闻媒体、博客、知识库、企业官网、电商内容型页面等，尤其适合近期更换CDN或开启安全防护后AI流量下降的网站。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-6 py-16 text-center border-t border-zinc-900">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">准备好让AI真正看到你的内容了吗？</h2>
+            <p class="text-zinc-400 text-sm mb-6 font-light">立即获取免费AI爬虫阻挡诊断，别让你的心血被悄悄埋没。</p>
+            <a href="#contact" class="inline-block bg-yellow-500 text-black px-8 py-3.5 rounded font-bold hover:bg-yellow-400 transition shadow-lg text-sm">立即获取免费诊断</a>
+        </section>
+    </div>
+
+    <div id="lang-en" class="lang-section hidden">
+        <header class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
+            <div class="inline-block code-font text-xs bg-zinc-800/60 border border-zinc-700 text-yellow-500 px-3 py-1 rounded-full mb-6 tracking-widest">
+                AI CRAWLER REPAIR SERVICE / Powered by Common Crawl Best Practices
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight gradient-text">
+                Is Your Website Secretly Blocked by AI Crawlers?<br>
+                <span class="gold-gradient-text">We Fix It - So AI Can Actually See Your Content.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto font-light leading-relaxed mb-10">
+                Remove hidden blocks from robots.txt, CDN, and WAF. Restore access for Common Crawl, GPTBot, and other major AI training crawlers so your content has a real chance to be included in training data and AI answers.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 items-center">
+                <a href="#contact" class="bg-zinc-100 text-black px-8 py-3.5 rounded font-bold hover:bg-white transition text-center shadow-lg">Get Your Free Diagnosis →</a>
+            </div>
+        </header>
+
+        <section class="max-w-6xl mx-auto px-6 py-16 border-t border-zinc-900">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-white">Why is your content completely invisible to AI?</h2>
+                <p class="text-zinc-500 mt-2">Even if you rank well on Google, your content might be completely invisible to ChatGPT, Claude, Perplexity, and Gemini.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="tech-card p-8 rounded-lg">
+                    <h3 class="text-yellow-500 font-bold mb-3 flex items-center">⚠️ Silent Barriers at the Gate</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        The #1 reason is usually not content quality - it's that AI crawlers are blocked at the gate. Common silent blocks include:
+                    </p>
+                    <ul class="mt-4 space-y-2 text-xs text-zinc-500 code-font">
+                        <li>• CDN/WAF "Block AI Bots" default rules</li>
+                        <li>• Accidental Disallow in robots.txt</li>
+                        <li>• Auto-injected rules by hosting providers</li>
+                        <li>• User-Agent filtering at server level</li>
+                    </ul>
+                </div>
+                <div class="tech-card p-8 rounded-lg border-red-500/20 flex flex-col justify-center">
+                    <h3 class="text-red-400 font-bold mb-2 flex items-center">✕ The Real Cost</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        Result: Your high-quality content never enters AI training datasets and cannot be cited, cutting you off from the future of AI-driven traffic.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-zinc-950 py-16 border-t border-b border-zinc-900">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <span class="code-font text-xs text-yellow-500 uppercase tracking-widest">Our Solution</span>
+                <h2 class="text-3xl font-bold text-white mt-1 mb-6">AI Crawler Repair Service</h2>
+                <p class="text-zinc-400 font-light leading-relaxed max-w-2xl mx-auto mb-8">
+                    A focused, high-impact service that restores AI bot access to your website. We don't do general SEO — we specialize in targeted AI crawler unblocking and verification.
+                </p>
+                <div class="inline-block bg-zinc-900 border border-zinc-800 rounded px-6 py-3 code-font text-sm text-yellow-500">
+                    Core Outcome: From "Blocked" → "Crawled" → "Increased AI Visibility"
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-white">4-Step Repair Process (2-4 Weeks)</h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6 mb-16">
+                <div class="tech-card p-6 rounded border-zinc-800">
+                    <div class="code-font text-yellow-500 font-bold text-xl mb-2">01</div>
+                    <h4 class="text-sm font-bold text-zinc-200 mb-2">In-Depth Diagnosis (1-2 days)</h4>
+                    <p class="text-zinc-500 text-xs leading-relaxed">Full audit of robots.txt, CDN/WAF, server config, and current Common Crawl Index status.</p>
+                </div>
+                <div class="tech-card p-6 rounded border-zinc-800">
+                    <div class="code-font text-yellow-500 font-bold text-xl mb-2">02</div>
+                    <h4 class="text-sm font-bold text-zinc-200 mb-2">Custom Repair Plan (3-7 days)</h4>
+                    <p class="text-zinc-500 text-xs leading-relaxed">Precise configuration changes for robots.txt, CDN rules, WAF whitelisting, with hands-on assistance.</p>
+                </div>
+                <div class="tech-card p-6 rounded border-zinc-800">
+                    <div class="code-font text-yellow-500 font-bold text-xl mb-2">03</div>
+                    <h4 class="text-sm font-bold text-zinc-200 mb-2">Verification & Monitoring (7-14 days)</h4>
+                    <p class="text-zinc-500 text-xs leading-relaxed">Re-test with real CCBot User-Agent and monitor index updates.</p>
+                </div>
+                <div class="tech-card p-6 rounded border-zinc-800">
+                    <div class="code-font text-yellow-500 font-bold text-xl mb-2">04</div>
+                    <h4 class="text-sm font-bold text-zinc-200 mb-2">Final Report & Follow-up</h4>
+                    <p class="text-zinc-500 text-xs leading-relaxed">Before/after documentation + 30 days of support.</p>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900/50 border border-zinc-800/80 rounded-lg p-8">
+                <h3 class="text-lg font-bold text-zinc-200 mb-4 flex items-center">
+                    <span class="text-yellow-500 mr-2">📦</span> What You Get
+                </h3>
+                <div class="grid sm:grid-cols-2 gap-4 text-sm text-zinc-400">
+                    <div class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> Professional AI Crawler Block Diagnostic Report</div>
+                    <div class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> Executable repair configuration guide</div>
+                    <div class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> Before & after verification screenshots</div>
+                    <div class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> One-page Repair Scorecard</div>
+                    <div class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> 30-day follow-up check</div>
+                    <div class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> Next-step AI visibility recommendations</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-6 py-16 border-t border-zinc-900">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-white">Pricing Plans</h2>
+                <p class="text-zinc-500 text-sm mt-2">Limited Offer: Free preliminary diagnosis for the first 30 clients.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="tech-card p-8 rounded-lg flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-zinc-200 mb-1">Basic</h3>
+                        <div class="code-font text-2xl font-bold text-yellow-500 mb-4">$680 <span class="text-xs text-zinc-500 font-normal">/ ¥4,800</span></div>
+                        <p class="text-zinc-400 text-xs border-t border-zinc-800 pt-4 mb-6">Diagnosis + Repair Plan + Verification Report. We provide guidance; no server access needed.</p>
+                    </div>
+                    <a href="#contact" class="block text-center bg-zinc-800 text-white py-2 rounded text-sm hover:bg-zinc-700 transition">Book Now</a>
+                </div>
+                <div class="tech-card p-8 rounded-lg border-yellow-500/40 flex flex-col justify-between relative">
+                    <div class="absolute top-0 right-0 bg-yellow-500 text-black text-[10px] font-bold px-2 py-0.5 code-font">RECOMMENDED</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-zinc-200 mb-1">Standard</h3>
+                        <div class="code-font text-2xl font-bold text-yellow-500 mb-4">$1,380 <span class="text-xs text-zinc-500 font-normal">/ ¥9,800</span></div>
+                        <p class="text-zinc-400 text-xs border-t border-zinc-800 pt-4 mb-6">Diagnosis + Hands-on Assistance + Full Report + 30 Days Follow-up. (Includes optional remote help).</p>
+                    </div>
+                    <a href="#contact" class="block text-center bg-yellow-500 text-black py-2 rounded text-sm font-bold hover:bg-yellow-400 transition">Book Now</a>
+                </div>
+                <div class="tech-card p-8 rounded-lg flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-zinc-200 mb-1">Enterprise</h3>
+                        <div class="code-font text-2xl font-bold text-yellow-500 mb-4">$2,500+ <span class="text-xs text-zinc-500 font-normal">/ ¥18,000+</span></div>
+                        <p class="text-zinc-400 text-xs border-t border-zinc-800 pt-4 mb-6">Custom tailored for multi-domain owners and large scale platforms requiring continuous AI indexing protection.</p>
+                    </div>
+                    <a href="#contact" class="block text-center bg-zinc-800 text-white py-2 rounded text-sm hover:bg-zinc-700 transition">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-6 py-16 border-t border-zinc-900">
+            <h2 class="text-2xl font-bold text-center text-white mb-10">Frequently Asked Questions</h2>
+            <div class="space-y-6">
+                <div class="bg-zinc-900/30 p-5 rounded border border-zinc-900">
+                    <h4 class="text-zinc-200 font-bold text-sm mb-2">Q: How soon will I see results in AI?</h4>
+                    <p class="text-zinc-400 text-xs leading-relaxed">A: Access is usually restored within days. Crawling and training inclusion takes 1-3 cycles depending on the model.</p>
+                </div>
+                <div class="bg-zinc-900/30 p-5 rounded border border-zinc-900">
+                    <h4 class="text-zinc-200 font-bold text-sm mb-2">Q: Do I need to give server access?</h4>
+                    <p class="text-zinc-400 text-xs leading-relaxed">A: Not for the Basic plan. The Standard plan includes optional remote assistance (with your explicit permission).</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-6 py-16 text-center border-t border-zinc-900">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Make Your Content Visible to AI?</h2>
+            <p class="text-zinc-400 text-sm mb-6 font-light">Get Your Free AI Crawler Diagnosis Now →</p>
+            <a href="#contact" class="inline-block bg-yellow-500 text-black px-8 py-3.5 rounded font-bold hover:bg-yellow-400 transition shadow-lg text-sm">Get Free Diagnosis</a>
+        </section>
+    </div>
+
+    <section class="max-w-4xl mx-auto px-6 py-8 text-center">
+        <blockquote class="text-xl md:text-2xl font-serif italic text-zinc-300 leading-relaxed max-w-3xl mx-auto">
+            “传统的 SEO 是去跪求搜索引擎，指望几个月后被随缘翻到。而我们的服务，是直接移除隐形限制，重塑 AI 抓取通道。”
+        </blockquote>
+    </section>
+
+    <section id="contact" class="max-w-xl mx-auto px-6 pb-24 text-center border-t border-zinc-900 pt-16">
+        <h2 class="text-2xl font-bold text-white mb-2">获取您的专属方案与商务报价</h2>
+        <p class="text-zinc-500 text-sm mb-8">加核心架构师微信或邮件联系，直接获取《AI爬虫阻挡诊断报告》与保密项目商务预算单。</p>
+        
+        <div class="bg-zinc-950 border border-zinc-800 rounded-lg p-8 max-w-sm mx-auto shadow-xl">
+            <p class="text-xs uppercase tracking-widest text-zinc-500 font-bold mb-4 code-font">DIRECT CONTACT / 直连通道</p>
+            
+            <div class="w-48 h-48 bg-zinc-900 border border-zinc-700 mx-auto rounded flex flex-col justify-center items-center mb-4 relative overflow-hidden">
+                <div class="text-3xl mb-1">💬</div>
+                <span class="text-xs text-zinc-400 font-medium px-4"><img src="weixin.jpg" alt="微信二维码"></span>
+                <span class="text-[10px] text-yellow-500 code-font mt-1">备注：AI爬虫修复评估</span>
+            </div>
+            
+            <div class="text-sm text-zinc-300 space-y-2 font-light">
+                <p>微信直连：<span class="text-white font-mono font-bold select-all bg-zinc-900 px-2 py-0.5 rounded border border-zinc-800">IAIGEO</span></p>
+                <p>技术邮箱：<a href="mailto:IAIGEO@TUTAMAIL.COM" class="text-yellow-500 font-mono font-bold select-all bg-zinc-900 px-2 py-0.5 rounded border border-yellow-500/20 hover:text-yellow-400 transition">IAIGEO@TUTAMAIL.COM</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-zinc-900 bg-[#060608] px-6 py-8 text-zinc-600/50 text-[11px] text-center space-y-2">
+        <p class="opacity-40">© 2026 www.iaigeo.com. All Rights Reserved. Powered by Common Crawl Best Practices</p>
+        <p class="max-w-3xl mx-auto font-light leading-relaxed text-zinc-800/40 text-[10px] select-none">
+            【合规与免责声明】本站提供人工智能检索增强优化（GEO）技术合规咨询、AI爬虫修复技术支持。我们坚定拥护开源协议及生成式人工智能服务的合规管理规定。所有交付物均属于合法中立的互联网技术公关与网络优化服务。
+        </p>
+    </footer>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-section').forEach(el => el.classList.add('hidden'));
+            document.getElementById('lang-' + lang).classList.remove('hidden');
+            
+            const btnZh = document.getElementById('btn-zh');
+            const btnEn = document.getElementById('btn-en');
+            
+            if(lang === 'zh') {
+                btnZh.className = "text-xs font-bold text-yellow-500 border border-yellow-500/30 px-2 py-0.5 rounded bg-yellow-500/10";
+                btnEn.className = "text-xs font-bold text-zinc-500 border border-zinc-800 px-2 py-0.5 rounded";
+            } else {
+                btnEn.className = "text-xs font-bold text-yellow-500 border border-yellow-500/30 px-2 py-0.5 rounded bg-yellow-500/10";
+                btnZh.className = "text-xs font-bold text-zinc-500 border border-zinc-800 px-2 py-0.5 rounded";
+            }
+        }
+    </script>
+</body>
+</html>
