@@ -1,212 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Visibility Audit — IAIGEO.COM</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        void: '#FFFFFF', // Clean White Background
-                        paper: '#0A0A0C', // Ink Black Text
-                        accent: '#FF4500', // Brand Accent (Orange-Crimson aligned with IAIGEO)
-                        charcoal: '#F4F4F6', // Light Gray for Cards
-                        borderDark: '#E2E2E8', // Crisp Border Line
-                        muted: '#6E6E73' // Secondary Text Gray
-                    },
-                    fontFamily: {
-                        serif: ['Playfair Display', 'Georgia', 'serif'],
-                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
-                    }
-                }
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Visibility Audit — IAIGEO.COM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#0A0A0C",
+            paper: "#FFFFFF",
+            ash: "#F3F3F1",
+            line: "#DCDCD7",
+            muted: "#73736E",
+            accent: "#FF4500"
+          },
+          fontFamily: {
+            sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+            serif: ["Playfair Display", "Georgia", "serif"],
+            mono: ["JetBrains Mono", "SFMono-Regular", "Consolas", "monospace"]
+          }
         }
-    </script>
-    <style>
-        body {
-            background-color: #FFFFFF;
-            color: #0A0A0C;
-            background-image: radial-gradient(rgba(10, 10, 12, 0.05) 1px, transparent 1px);
-            background-size: 32px 32px;
-        }
-        .iaigeo-border {
-            border-color: #E2E2E8;
-        }
-        input:focus {
-            outline: none;
-            border-color: #FF4500;
-        }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --ink: #0A0A0C;
+      --paper: #FFFFFF;
+      --ash: #F3F3F1;
+      --line: #DCDCD7;
+      --muted: #73736E;
+      --accent: #FF4500;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: white;
+    }
+
+    .hairline { border-color: var(--line); }
+
+    .texture {
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+    }
+
+    .display {
+      font-size: clamp(4rem, 10vw, 9.8rem);
+      line-height: .88;
+      letter-spacing: -.065em;
+    }
+
+    .section-title {
+      font-size: clamp(2.6rem, 5.4vw, 5.8rem);
+      line-height: .94;
+      letter-spacing: -.055em;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .8s ease, transform .8s cubic-bezier(.2,.75,.2,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .accent-line {
+      position: relative;
+      display: inline-block;
+    }
+
+    .accent-line::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -.12em;
+      height: .07em;
+      min-height: 3px;
+      background: var(--accent);
+      transform: scaleX(.2);
+      transform-origin: left;
+      transition: transform .7s cubic-bezier(.2,.75,.2,1);
+    }
+
+    .accent-line:hover::after { transform: scaleX(1); }
+
+    .magnetic {
+      transition: transform .25s ease, background-color .25s ease, color .25s ease;
+    }
+
+    .magnetic:hover {
+      transform: translateY(-3px);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .35s ease;
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .cursor-mark {
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      display: inline-block;
+      margin-right: 10px;
+      transform: rotate(45deg);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      * { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
 </head>
-<body class="font-sans antialiased selection:bg-accent selection:text-white min-h-screen flex flex-col justify-between">
 
-    <!-- IAIGEO Brand Header (Light Theme) -->
-    <header class="w-full max-w-7xl mx-auto px-6 py-6 flex justify-between items-center border-b iaigeo-border">
-        <!-- Logo matching IAIGEO.COM identity -->
-        <a href="https://iaigeo.com" class="text-2xl font-black tracking-tighter uppercase font-mono">
-            IAI<span class="text-accent">GEO</span><span class="text-muted font-normal text-base">.COM</span>
-        </a>
-        <nav class="hidden md:flex space-x-12 text-sm font-mono tracking-wider uppercase text-muted">
-            <a href="https://iaigeo.com" class="hover:text-paper transition-colors">Main Directory</a>
-            <a href="#why" class="hover:text-paper transition-colors">Why GEO</a>
-            <a href="#workflow" class="hover:text-paper transition-colors">Audit & Prompts</a>
-            <a href="#pricing" class="hover:text-paper transition-colors">Pricing</a>
-        </nav>
-        <div class="text-xs tracking-widest text-muted font-mono uppercase bg-charcoal px-3 py-1.5 border iaigeo-border">
-            [ ENGINE v2026.8 ]
+<body>
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b hairline">
+    <div class="max-w-[1440px] mx-auto px-5 md:px-8 h-[76px] flex items-center justify-between">
+      <a href="https://iaigeo.com" class="font-mono font-black tracking-[-0.08em] text-xl md:text-2xl">
+        IAI<span class="text-accent">GEO</span><span class="text-muted font-normal text-sm tracking-[-0.02em]">.COM</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-9 font-mono text-[11px] tracking-[.16em] uppercase text-muted">
+        <a class="nav-link hover:text-ink transition-colors" href="#why">Why GEO</a>
+        <a class="nav-link hover:text-ink transition-colors" href="#workflow">Framework</a>
+        <a class="nav-link hover:text-ink transition-colors" href="#output">Output</a>
+        <a class="nav-link hover:text-ink transition-colors" href="#pricing">Pricing</a>
+      </nav>
+
+      <a href="#audit" class="font-mono text-[10px] md:text-[11px] tracking-[.16em] uppercase border border-ink px-4 py-3 hover:bg-ink hover:text-white transition-colors">
+        Run Audit
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="audit" class="border-b hairline">
+      <div class="max-w-[1440px] mx-auto px-5 md:px-8 pt-14 md:pt-20 pb-20 md:pb-28">
+        <div class="flex items-center gap-2 font-mono text-[10px] md:text-[11px] uppercase tracking-[.18em] text-muted mb-9 reveal">
+          <span class="cursor-mark"></span>
+          Generative Engine Optimization Audit
         </div>
-    </header>
 
-    <main class="w-full max-w-7xl mx-auto px-6">
-        
-        <!-- Hero Section (Padding Reduced & Negative Margin Added to Push H1 Up) -->
-        <section class="pt-8 pb-16 md:pt-12 md:pb-24 border-b iaigeo-border">
-            <div class="max-w-5xl">
-                <!-- Tag moved up -->
-                <div class="inline-block bg-charcoal border iaigeo-border text-accent font-mono text-xs uppercase tracking-widest px-3 py-1 mb-4">
-                    // Generative Engine Optimization Audit
-                </div>
-                
-                <!-- H1 Shifted Up via Negative Margin (-mt-8 on mobile, -mt-12 / -mt-16 on desktop) -->
-                <h1 class="text-5xl md:text-8xl font-medium tracking-tight leading-[1.05] mb-8 md:-mt-4">
-                    When buyers ask ChatGPT about your brand,<br/>
-                    is it a <span class="font-serif italic font-normal text-muted">clear citation</span>,<br/>
-                    or complete <span class="text-accent underline decoration-1 underline-offset-8">hallucination & silence</span>?
-                </h1>
-                
-                <p class="text-xl md:text-2xl text-muted font-light max-w-2xl leading-relaxed mb-12">
-                    Over 80% of decision-makers now turn to Perplexity and ChatGPT over Google. IAIGEO uncovers your LLM indexing blind spots and delivers plug-and-play Prompt Assets to fix them.
-                </p>
+        <div class="max-w-[1250px]">
+          <h1 class="display font-medium reveal">
+            <span class="block">Be the answer.</span>
+            <span class="block text-muted font-serif italic font-normal">not the silence.</span>
+          </h1>
 
-                <!-- Core Hook Form -->
-                <form id="auditForm" class="max-w-2xl flex flex-col sm:flex-row gap-4 pt-2">
-                    <input 
-                        type="url" 
-                        id="urlInput"
-                        required 
-                        placeholder="https://yourwebsite.com" 
-                        class="bg-transparent border-b-2 iaigeo-border px-0 py-3 text-lg md:text-xl text-paper placeholder-muted focus:border-accent transition-colors flex-grow font-mono"
-                    />
-                    <input 
-                        type="email" 
-                        id="emailInput"
-                        required 
-                        placeholder="Work Email" 
-                        class="bg-transparent border-b-2 iaigeo-border px-0 py-3 text-lg md:text-xl text-paper placeholder-muted focus:border-accent transition-colors flex-grow font-mono"
-                    />
-                    <button 
-                        type="submit" 
-                        class="bg-paper text-white font-mono font-medium px-8 py-3 text-sm tracking-widest uppercase hover:bg-accent hover:text-white transition-all duration-300 sm:w-auto w-full mt-4 sm:mt-0"
-                    >
-                        Run Audit
-                    </button>
-                </form>
-                <p class="text-xs font-mono text-muted mt-4">
-                    * Human + Algorithm verified by IAIGEO Engine. 1-page PDF delivered within 12 hours.
-                </p>
-            </div>
-        </section>
+          <div class="grid md:grid-cols-12 gap-8 md:gap-16 mt-14 md:mt-20 items-end reveal">
+            <p class="md:col-span-6 text-lg md:text-2xl leading-[1.35] tracking-[-.02em] text-muted max-w-2xl">
+              When buyers ask ChatGPT or Perplexity about your brand, IAIGEO uncovers the visibility gaps that decide whether your company becomes a clear citation—or disappears from the answer.
+            </p>
 
-        <!-- Section 1: Why GEO matters -->
-        <section id="why" class="py-16 border-b iaigeo-border grid grid-cols-1 md:grid-cols-12 gap-12">
-            <div class="md:col-span-4">
-                <span class="font-mono text-xs text-muted tracking-widest uppercase">// 01. The Algorithmic Shift</span>
-                <h2 class="text-3xl font-medium mt-4 tracking-tight">Traditional SEO is dying. GEO controls citation authority.</h2>
-            </div>
-            <div class="md:col-span-8 text-muted text-lg leading-relaxed font-light space-y-8">
-                <p>
-                    When potential clients ask Perplexity: <em>"What are the best B2B solutions for my company?"</em>—does your website exist in the LLM's RAG retrieval context?
-                </p>
-                <p class="text-paper border-l-2 border-accent pl-6 py-3 font-normal bg-charcoal">
-                    If your domain lacks Markdown chunking hierarchy, structured FAQ schemas, or explicit key-value entity parameters, AI web crawlers (GPTBot / PerplexityBot) will simply ignore your site.
-                </p>
-            </div>
-        </section>
+            <div class="md:col-span-6">
+              <form id="auditForm" class="border-t-2 border-ink pt-5">
+                <div class="grid sm:grid-cols-2 gap-x-8">
+                  <label class="block">
+                    <span class="font-mono text-[10px] uppercase tracking-[.16em] text-muted">Website</span>
+                    <input id="urlInput" type="url" required placeholder="https://yourwebsite.com"
+                      class="w-full bg-transparent border-0 border-b hairline py-4 text-base md:text-lg font-mono placeholder:text-[#A2A29D] focus:border-accent focus:outline-none transition-colors" />
+                  </label>
 
-        <!-- Section 2: Funnel Process -->
-        <section id="workflow" class="py-16 border-b iaigeo-border">
-            <div class="mb-12">
-                <span class="font-mono text-xs text-muted tracking-widest uppercase">// 02. The IAIGEO Framework</span>
-                <h2 class="text-3xl md:text-5xl font-medium tracking-tight mt-4">Two steps to complete AI visibility.</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Step 1: Free Hook PDF -->
-                <div class="border iaigeo-border p-10 flex flex-col justify-between bg-white shadow-sm">
-                    <div>
-                        <span class="font-mono text-accent text-xs tracking-widest uppercase">[ STEP 01 — COMPLIMENTARY ]</span>
-                        <h3 class="text-2xl font-medium mt-4 mb-6">1-Page AI Visibility Audit (PDF)</h3>
-                        <ul class="space-y-4 text-muted font-light text-sm font-mono">
-                            <li class="flex items-center"><span class="text-accent mr-3">></span> Overall GEO & AI Index Score (0-100)</li>
-                            <li class="flex items-center"><span class="text-accent mr-3">></span> Live search screenshots from ChatGPT & Perplexity</li>
-                            <li class="flex items-center"><span class="text-accent mr-3">></span> Breakdown of 3 missing critical entities</li>
-                        </ul>
-                    </div>
-                    <div class="mt-12 font-mono text-xs text-muted uppercase tracking-widest">100% Free · No Credit Card Required</div>
+                  <label class="block mt-5 sm:mt-0">
+                    <span class="font-mono text-[10px] uppercase tracking-[.16em] text-muted">Work Email</span>
+                    <input id="emailInput" type="email" required placeholder="you@company.com"
+                      class="w-full bg-transparent border-0 border-b hairline py-4 text-base md:text-lg font-mono placeholder:text-[#A2A29D] focus:border-accent focus:outline-none transition-colors" />
+                  </label>
                 </div>
 
-                <!-- Step 2: Paid Prompt Suite -->
-                <div class="border-2 border-accent p-10 flex flex-col justify-between bg-charcoal">
-                    <div>
-                        <span class="font-mono text-accent text-xs tracking-widest uppercase">[ STEP 02 — TAILORED SOLUTION ]</span>
-                        <h3 class="text-2xl font-medium mt-4 mb-6">Custom GEO Prompt Asset Suite</h3>
-                        <ul class="space-y-4 text-paper font-light text-sm font-mono">
-                            <li class="flex items-center"><span class="text-accent mr-3">✓</span> Prompt #1: AI Chunking & Markdown Restructurer</li>
-                            <li class="flex items-center"><span class="text-accent mr-3">✓</span> Prompt #2: RAG FAQ & Schema.org Generator</li>
-                            <li class="flex items-center"><span class="text-accent mr-3">✓</span> Prompt #3: Missing Entity & USP Injector</li>
-                            <li class="flex items-center"><span class="text-accent mr-3">✓</span> Prompt #4: AI Hallucination & Brand Tamer</li>
-                        </ul>
-                    </div>
-                    <div class="mt-12 font-mono text-xs text-accent uppercase tracking-widest">Optional Purchase After PDF · Flat $9.99</div>
-                </div>
-            </div>
-        </section>
+                <button type="submit" class="magnetic mt-7 w-full bg-ink text-white px-7 py-5 flex items-center justify-between group">
+                  <span class="font-mono text-[11px] uppercase tracking-[.18em]">Run Free Audit</span>
+                  <span class="text-xl group-hover:translate-x-1 transition-transform">→</span>
+                </button>
 
-        <!-- Section 3: Pricing -->
-        <section id="pricing" class="py-16 text-center">
-            <div class="max-w-2xl mx-auto">
-                <span class="font-mono text-xs text-muted tracking-widest uppercase">// 03. Frictionless Pricing</span>
-                <h2 class="text-4xl font-medium tracking-tight mt-4 mb-8">No subscriptions. Pay for results.</h2>
-                
-                <div class="text-6xl font-light font-serif mb-4">$9.99 <span class="text-base font-sans text-muted">/ One-time asset unlock</span></div>
-                <p class="text-muted font-light mb-12">
-                    Get your free PDF audit report first. Unlock the custom Prompt Assets only when you are ready to fix your website's missing entities.
+                <p class="mt-4 font-mono text-[10px] uppercase tracking-[.08em] text-muted">
+                  Human + algorithm verified · 1-page PDF delivered within 12 hours
                 </p>
-
-                <a href="#auditForm" class="inline-block bg-accent text-white font-mono font-medium px-10 py-5 text-sm tracking-widest uppercase hover:bg-paper hover:text-white transition-all duration-300">
-                    Get Your Free Audit Now
-                </a>
+              </form>
             </div>
-        </section>
-
-    </main>
-
-    <!-- IAIGEO Footer -->
-    <footer class="w-full border-t iaigeo-border py-12 bg-charcoal">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs font-mono text-muted space-y-4 md:space-y-0">
-            <div>© 2026 IAIGEO.COM — Generative Engine Optimization Engine.</div>
-            <div class="flex space-x-6">
-                <a href="https://iaigeo.com" class="hover:text-paper transition-colors">DIRECTORY</a>
-                <a href="#" class="hover:text-paper transition-colors">PRIVACY</a>
-                <a href="#" class="hover:text-paper transition-colors">TERMS</a>
-            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- Form Handler -->
-    <script>
-        document.getElementById('auditForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const url = document.getElementById('urlInput').value;
-            const email = document.getElementById('emailInput').value;
-            
-            alert('Audit requested via IAIGEO Engine! We are processing ' + url + '. Your free PDF audit will arrive at ' + email + ' within 12 hours.');
-        });
-    </script>
+    <!-- WHY -->
+    <section id="why" class="border-b hairline">
+      <div class="max-w-[1440px] mx-auto px-5 md:px-8 py-20 md:py-28">
+        <div class="grid md:grid-cols-12 gap-10 md:gap-16">
+          <div class="md:col-span-4 reveal">
+            <div class="font-mono text-[10px] uppercase tracking-[.18em] text-muted">01 / The shift</div>
+            <h2 class="section-title font-medium mt-5">
+              Search changed.
+              <span class="text-muted">So should visibility.</span>
+            </h2>
+          </div>
+
+          <div class="md:col-span-7 md:col-start-6 reveal">
+            <p class="text-2xl md:text-4xl leading-[1.15] tracking-[-.04em] max-w-3xl">
+              When someone asks Perplexity, “What are the best B2B solutions for my company?”—does your website exist in the retrieval context?
+            </p>
+
+            <div class="mt-12 border-l-2 border-accent pl-6 md:pl-8 max-w-2xl">
+              <p class="text-base md:text-lg leading-relaxed text-muted">
+                If your domain lacks Markdown chunking hierarchy, structured FAQ schemas, or explicit key-value entity parameters, AI web crawlers such as GPTBot and PerplexityBot may ignore the information you need them to understand.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKFLOW -->
+    <section id="workflow" class="border-b hairline">
+      <div class="max-w-[1440px] mx-auto px-5 md:px-8 py-20 md:py-28">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 reveal">
+          <div>
+            <div class="font-mono text-[10px] uppercase tracking-[.18em] text-muted">02 / Framework</div>
+            <h2 class="section-title font-medium mt-5">Two steps.<br/><span class="text-muted">One clear direction.</span></h2>
+          </div>
+          <p class="font-mono text-[10px] uppercase tracking-[.14em] text-muted max-w-xs leading-relaxed">
+            Diagnose the blind spots first. Fix only what matters.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 border-t hairline">
+          <article class="py-10 md:py-12 md:pr-14 border-b md:border-b-0 md:border-r hairline reveal">
+            <div class="flex justify-between items-start">
+              <span class="font-mono text-[10px] tracking-[.18em] text-accent uppercase">Step 01 — Complimentary</span>
+              <span class="font-mono text-[10px] text-muted">01</span>
+            </div>
+
+            <h3 class="text-3xl md:text-5xl tracking-[-.045em] leading-none mt-9 font-medium">
+              1-page AI Visibility Audit
+            </h3>
+
+            <ul class="mt-10 space-y-5 font-mono text-[11px] md:text-xs uppercase tracking-[.04em] text-muted">
+              <li class="flex gap-4"><span class="text-accent">+</span><span>Overall GEO & AI Index Score (0–100)</span></li>
+              <li class="flex gap-4"><span class="text-accent">+</span><span>Live search screenshots from ChatGPT & Perplexity</span></li>
+              <li class="flex gap-4"><span class="text-accent">+</span><span>Breakdown of 3 missing critical entities</span></li>
+            </ul>
+
+            <div class="mt-12 pt-5 border-t hairline font-mono text-[10px] uppercase tracking-[.14em] text-muted">
+              100% free · No credit card required
+            </div>
+          </article>
+
+          <article class="py-10 md:py-12 md:pl-14 reveal">
+            <div class="flex justify-between items-start">
+              <span class="font-mono text-[10px] tracking-[.18em] text-accent uppercase">Step 02 — Tailored solution</span>
+              <span class="font-mono text-[10px] text-muted">02</span>
+            </div>
+
+            <h3 class="text-3xl md:text-5xl tracking-[-.045em] leading-none mt-9 font-medium">
+              Custom GEO Prompt Asset Suite
+            </h3>
+
+            <ul class="mt-10 space-y-5 font-mono text-[11px] md:text-xs uppercase tracking-[.04em]">
+              <li class="flex gap-4"><span class="text-accent">✓</span><span>Prompt #1 — AI Chunking & Markdown Restructurer</span></li>
+              <li class="flex gap-4"><span class="text-accent">✓</span><span>Prompt #2 — RAG FAQ & Schema.org Generator</span></li>
+              <li class="flex gap-4"><span class="text-accent">✓</span><span>Prompt #3 — Missing Entity & USP Injector</span></li>
+              <li class="flex gap-4"><span class="text-accent">✓</span><span>Prompt #4 — AI Hallucination & Brand Tamer</span></li>
+            </ul>
+
+            <div class="mt-12 pt-5 border-t hairline font-mono text-[10px] uppercase tracking-[.14em] text-accent">
+              Optional purchase after PDF · Flat $9.99
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTPUT / ADVANTAGES -->
+    <section id="output" class="texture border-b hairline bg-ash">
+      <div class="max-w-[1440px] mx-auto px-5 md:px-8 py-20 md:py-28">
+        <div class="grid md:grid-cols-12 gap-12 md:gap-16">
+          <div class="md:col-span-5 reveal">
+            <div class="font-mono text-[10px] uppercase tracking-[.18em] text-muted">03 / What changes</div>
+            <h2 class="section-title font-medium mt-5">
+              Less noise.
+              <span class="text-muted">More authority.</span>
+            </h2>
+          </div>
+
+          <div class="md:col-span-6 md:col-start-7 reveal">
+            <div class="border-t border-ink">
+              <div class="py-7 border-b hairline grid grid-cols-[70px_1fr] gap-5">
+                <span class="font-mono text-[10px] text-accent">A/01</span>
+                <p class="text-xl md:text-2xl tracking-[-.025em]">Know where your brand is missing from AI retrieval.</p>
+              </div>
+              <div class="py-7 border-b hairline grid grid-cols-[70px_1fr] gap-5">
+                <span class="font-mono text-[10px] text-accent">A/02</span>
+                <p class="text-xl md:text-2xl tracking-[-.025em]">See the entities and structures that need attention.</p>
+              </div>
+              <div class="py-7 border-b hairline grid grid-cols-[70px_1fr] gap-5">
+                <span class="font-mono text-[10px] text-accent">A/03</span>
+                <p class="text-xl md:text-2xl tracking-[-.025em]">Move from diagnosis to practical prompt assets.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS: source does not provide customer quotes, so this is intentionally framed as evidence language -->
+    <section class="border-b hairline">
+      <div class="max-w-[1440px] mx-auto px-5 md:px-8 py-20 md:py-28">
+        <div class="max-w-4xl reveal">
+          <div class="font-mono text-[10px] uppercase tracking-[.18em] text-muted">04 / The promise</div>
+          <blockquote class="mt-8 text-4xl md:text-6xl leading-[1.02] tracking-[-.05em]">
+            “Make your visibility
+            <span class="font-serif italic text-muted">legible</span>
+            to the systems deciding what gets seen.”
+          </blockquote>
+          <p class="mt-8 font-mono text-[10px] uppercase tracking-[.14em] text-muted">
+            IAIGEO — Generative Engine Optimization Engine
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="max-w-[1440px] mx-auto px-5 md:px-8 py-20 md:py-28">
+        <div class="grid md:grid-cols-12 gap-12 items-end">
+          <div class="md:col-span-7 reveal">
+            <div class="font-mono text-[10px] uppercase tracking-[.18em] text-muted">05 / Frictionless pricing</div>
+            <h2 class="section-title font-medium mt-5">
+              No subscription.
+              <span class="text-muted">Pay for the fix.</span>
+            </h2>
+          </div>
+
+          <div class="md:col-span-5 reveal">
+            <div class="border-t-2 border-ink pt-7">
+              <div class="flex items-end gap-3">
+                <span class="text-7xl md:text-8xl font-light tracking-[-.07em]">$9.99</span>
+                <span class="font-mono text-[10px] uppercase tracking-[.1em] text-muted mb-3">one-time asset unlock</span>
+              </div>
+              <p class="mt-7 text-muted leading-relaxed max-w-md">
+                Get your free PDF audit report first. Unlock the custom Prompt Assets only when you are ready to fix your website’s missing entities.
+              </p>
+
+              <a href="#audit" class="magnetic mt-9 bg-accent text-white px-7 py-5 inline-flex w-full items-center justify-between group">
+                <span class="font-mono text-[11px] uppercase tracking-[.18em]">Get Your Free Audit</span>
+                <span class="text-xl group-hover:translate-x-1 transition-transform">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink text-white">
+    <div class="max-w-[1440px] mx-auto px-5 md:px-8 py-10 md:py-12">
+      <div class="flex flex-col md:flex-row gap-8 justify-between items-start md:items-center">
+        <div>
+          <div class="font-mono font-black tracking-[-.08em] text-xl">
+            IAI<span class="text-accent">GEO</span><span class="text-white/40 font-normal text-sm">.COM</span>
+          </div>
+          <div class="font-mono text-[9px] uppercase tracking-[.14em] text-white/40 mt-3">
+            Generative Engine Optimization Engine
+          </div>
+        </div>
+
+        <div class="flex gap-6 font-mono text-[9px] uppercase tracking-[.14em] text-white/50">
+          <a href="https://iaigeo.com" class="hover:text-white transition-colors">Directory</a>
+          <a href="#" class="hover:text-white transition-colors">Privacy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms</a>
+        </div>
+      </div>
+
+      <div class="mt-10 pt-5 border-t border-white/15 flex justify-between gap-5 font-mono text-[9px] uppercase tracking-[.12em] text-white/30">
+        <span>© 2026 IAIGEO.COM</span>
+        <span>Engine v2026.8</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Subtle reveal motion
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    // Preserve the original audit interaction, with a calmer confirmation.
+    document.getElementById("auditForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const url = document.getElementById("urlInput").value;
+      const email = document.getElementById("emailInput").value;
+
+      alert(
+        "Audit requested via IAIGEO Engine.\\n\\n" +
+        "Website: " + url + "\\n" +
+        "Delivery: " + email + "\\n\\n" +
+        "Your free 1-page PDF audit will arrive within 12 hours."
+      );
+    });
+  </script>
 </body>
 </html>
