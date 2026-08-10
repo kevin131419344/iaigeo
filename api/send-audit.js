@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${re_cQda3QWm_N96suMJp2QiRSQfmHzLG6199}`,
+        'Authorization': `Bearer ${re_Fo6o6qU8_4Tn7kh8SHyVbrUMmgYcwxd1a}`,
       },
       body: JSON.stringify({
         from: 'IAIGEO Engine <audit@mail.iaigeo.com>',
@@ -33,7 +33,7 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${re_cQda3QWm_N96suMJp2QiRSQfmHzLG6199}`,
+        'Authorization': `Bearer ${re_Fo6o6qU8_4Tn7kh8SHyVbrUMmgYcwxd1a}`,
       },
       body: JSON.stringify({
         from: 'IAIGEO System <system@mail.iaigeo.com>',
