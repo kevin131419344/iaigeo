@@ -11,12 +11,12 @@
             theme: {
                 extend: {
                     colors: {
-                        void: '#FFFFFF', // Clean White Background
-                        paper: '#0A0A0C', // Ink Black Text
-                        accent: '#FF4500', // Brand Accent (Orange-Crimson aligned with IAIGEO)
-                        charcoal: '#F4F4F6', // Light Gray for Cards
-                        borderDark: '#E2E2E8', // Crisp Border Line
-                        muted: '#6E6E73' // Secondary Text Gray
+                        void: '#FFFFFF',
+                        paper: '#0A0A0C',
+                        accent: '#FF4500',
+                        charcoal: '#F4F4F6',
+                        borderDark: '#E2E2E8',
+                        muted: '#6E6E73'
                     },
                     fontFamily: {
                         serif: ['Playfair Display', 'Georgia', 'serif'],
@@ -45,9 +45,8 @@
 </head>
 <body class="font-sans antialiased selection:bg-accent selection:text-white min-h-screen flex flex-col justify-between">
 
-    <!-- IAIGEO Brand Header (Light Theme) -->
+    <!-- IAIGEO Brand Header -->
     <header class="w-full max-w-7xl mx-auto px-6 py-6 flex justify-between items-center border-b iaigeo-border">
-        <!-- Logo matching IAIGEO.COM identity -->
         <a href="https://iaigeo.com" class="text-2xl font-black tracking-tighter uppercase font-mono">
             IAI<span class="text-accent">GEO</span><span class="text-muted font-normal text-base">.COM</span>
         </a>
@@ -63,16 +62,13 @@
     </header>
 
     <main class="w-full max-w-7xl mx-auto px-6">
-        
-        <!-- Hero Section (Padding Reduced & Negative Margin Added to Push H1 Up) -->
+        <!-- Hero Section -->
         <section class="pt-8 pb-16 md:pt-12 md:pb-24 border-b iaigeo-border">
             <div class="max-w-5xl">
-                <!-- Tag moved up -->
                 <div class="inline-block bg-charcoal border iaigeo-border text-accent font-mono text-xs uppercase tracking-widest px-3 py-1 mb-4">
                     // Generative Engine Optimization Audit
                 </div>
                 
-                <!-- H1 Shifted Up via Negative Margin (-mt-8 on mobile, -mt-12 / -mt-16 on desktop) -->
                 <h1 class="text-5xl md:text-8xl font-medium tracking-tight leading-[1.05] mb-8 md:-mt-4">
                     When buyers ask ChatGPT about your brand,<br/>
                     is it a <span class="font-serif italic font-normal text-muted">clear citation</span>,<br/>
@@ -136,7 +132,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Step 1: Free Hook PDF -->
                 <div class="border iaigeo-border p-10 flex flex-col justify-between bg-white shadow-sm">
                     <div>
                         <span class="font-mono text-accent text-xs tracking-widest uppercase">[ STEP 01 — COMPLIMENTARY ]</span>
@@ -150,7 +145,6 @@
                     <div class="mt-12 font-mono text-xs text-muted uppercase tracking-widest">100% Free · No Credit Card Required</div>
                 </div>
 
-                <!-- Step 2: Paid Prompt Suite -->
                 <div class="border-2 border-accent p-10 flex flex-col justify-between bg-charcoal">
                     <div>
                         <span class="font-mono text-accent text-xs tracking-widest uppercase">[ STEP 02 — TAILORED SOLUTION ]</span>
@@ -183,7 +177,6 @@
                 </a>
             </div>
         </section>
-
     </main>
 
     <!-- IAIGEO Footer -->
@@ -198,18 +191,7 @@
         </div>
     </footer>
 
-    <!-- Form Handler -->
-    <script>
-        document.getElementById('auditForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const url = document.getElementById('urlInput').value;
-            const email = document.getElementById('emailInput').value;
-            
-            alert('Audit requested via IAIGEO Engine! We are processing ' + url + '. Your free PDF audit will arrive at ' + email + ' within 12 hours.');
-        });
-    </script>
-
- <!-- 粘贴在 index.html 底部 </body> 前 -->
+    <!-- 唯一联通 API 接口的 JS 脚本 -->
     <script>
         document.getElementById('auditForm').addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -223,7 +205,6 @@
             const email = document.getElementById('emailInput').value;
 
             try {
-                // 呼叫同域名下的 API 路由
                 const response = await fetch('/api/send-audit', {
                     method: 'POST',
                     headers: {
@@ -236,16 +217,16 @@
                     alert('Request submitted! Confirmation sent to ' + email);
                     document.getElementById('auditForm').reset();
                 } else {
-                    alert('Submission failed. Please try again.');
+                    const data = await response.json();
+                    alert('Submission failed: ' + (data.error || 'Server error'));
                 }
             } catch (err) {
-                alert('Network error. Please try again later.');
+                alert('Network error. Please check your network connection.');
             } finally {
                 btn.innerText = originalText;
                 btn.disabled = false;
             }
         });
     </script>
-
 </body>
 </html>
