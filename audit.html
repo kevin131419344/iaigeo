@@ -191,42 +191,43 @@
         </div>
     </footer>
 
-    <!-- 唯一联通 API 接口的 JS 脚本 -->
+    <!-- 只需要这段简单的请求代码， -->
     <script>
-        document.getElementById('auditForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const btn = e.target.querySelector('button');
-            const originalText = btn.innerText;
-            btn.innerText = 'SUBMITTING...';
-            btn.disabled = true;
+document.getElementById('auditForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const btn = e.target.querySelector('button');
+    const originalText = btn.innerText;
+    btn.innerText = 'SUBMITTING...';
+    btn.disabled = true;
 
-            const url = document.getElementById('urlInput').value;
-            const email = document.getElementById('emailInput').value;
+    const url = document.getElementById('urlInput').value;
+    const email = document.getElementById('emailInput').value;
 
-            try {
-                const response = await fetch('/api/send-audit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ url: url, email: email })
-                });
-
-                if (response.ok) {
-                    alert('Request submitted! Confirmation sent to ' + email);
-                    document.getElementById('auditForm').reset();
-                } else {
-                    const data = await response.json();
-                    alert('Submission failed: ' + (data.error || 'Server error'));
-                }
-            } catch (err) {
-                alert('Network error. Please check your network connection.');
-            } finally {
-                btn.innerText = originalText;
-                btn.disabled = false;
-            }
+    try {
+        const response = await fetch('/api/send-audit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ url: url, email: email })
         });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert('Request submitted! Confirmation sent to ' + email);
+            document.getElementById('auditForm').reset();
+        } else {
+            alert('Submission failed: ' + (data.error || 'Server error'));
+        }
+    } catch (err) {
+        alert('Network error. Please try again.');
+    } finally {
+        btn.innerText = originalText;
+        btn.disabled = false;
+    }
+});
     </script>
 </body>
 </html>
