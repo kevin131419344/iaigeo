@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Ready Landing Page — 为真实客户与 AI 搜索而建</title>
+  <meta name="description" content="为 Google 传统搜索与 ChatGPT / Perplexity 智能搜索重新设计的新一代静态企业落地页。48 小时极速交付。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --fg: #111110;
+      --muted: #6b6b66;
+      --accent: #0f766e;
+      --accent-hover: #0d9488;
+      --border: #e7e5e4;
+      --card: #ffffff;
+      --radius: 2px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .display {
+      font-size: clamp(2.75rem, 6.5vw, 4.75rem);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .display-sm {
+      font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      font-size: clamp(1.125rem, 1.6vw, 1.35rem);
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 38rem;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin-inline: auto;
+    }
+
+    .container-narrow {
+      width: min(720px, 92%);
+      margin-inline: auto;
+    }
+
+    section {
+      padding: clamp(5rem, 12vw, 9rem) 0;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(250, 250, 249, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    nav.scrolled {
+      border-bottom-color: var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4.25rem;
+      width: min(1120px, 92%);
+      margin-inline: auto;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.25rem;
+      list-style: none;
+      font-size: 0.9rem;
+      font-weight: 450;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--fg);
+    }
+
+    .nav-cta {
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.55rem 1.15rem;
+      background: var(--fg);
+      color: var(--bg);
+      border-radius: var(--radius);
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.95rem 1.75rem;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--fg);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--fg);
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 2.5rem;
+    }
+
+    .hero {
+      padding-top: clamp(8.5rem, 16vw, 12rem);
+      padding-bottom: clamp(5rem, 10vw, 8rem);
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero .display {
+      max-width: 18ch;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero .lead {
+      max-width: 36rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-pain {
+      font-size: 1.05rem;
+      color: var(--fg);
+      max-width: 34rem;
+      margin-top: 1.75rem;
+      padding-left: 1.25rem;
+      border-left: 2px solid var(--accent);
+      line-height: 1.7;
+    }
+
+    .problem {
+      background: var(--fg);
+      color: #f5f5f4;
+    }
+
+    .problem .section-label {
+      color: #5eead4;
+    }
+
+    .problem .lead {
+      color: #a8a29e;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .problem-card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .problem-card p {
+      color: #a8a29e;
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    .problem-stat {
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid #292524;
+      font-size: 1.15rem;
+      max-width: 40rem;
+      color: #d6d3d1;
+    }
+
+    .solution-intro {
+      max-width: 40rem;
+    }
+
+    .solution-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2.75rem;
+    }
+
+    .pill {
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.65rem 1.15rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--card);
+    }
+
+    .pill strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+
+    .value-item {
+      padding-top: 1.75rem;
+      border-top: 2px solid var(--fg);
+    }
+
+    .value-item .num {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+
+    .value-item h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .value-item p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .audience-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 3rem;
+      margin-top: 3rem;
+      list-style: none;
+    }
+
+    .audience-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .audience-list .icon {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-top: 0.15rem;
+      color: var(--accent);
+    }
+
+    .audience-list h4 {
+      font-size: 1.05rem;
+      font-weight: 550;
+      margin-bottom: 0.35rem;
+    }
+
+    .audience-list p {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .tech {
+      background: #f5f5f4;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      margin-top: 3.5rem;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .tech-item {
+      padding: 2rem 2.25rem;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+
+    .tech-item:nth-child(2n) {
+      border-right: none;
+    }
+
+    .tech-item:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    .tech-item h4 {
+      font-size: 1rem;
+      font-weight: 550;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .tech-item p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+      counter-reset: step;
+    }
+
+    .process-step {
+      position: relative;
+      padding-top: 3.5rem;
+    }
+
+    .process-step::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+
+    .process-step h3 {
+      font-size: 1.15rem;
+      font-weight: 550;
+      margin-bottom: 0.75rem;
+    }
+
+    .process-step p {
+      font-size: 0.98rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+      margin-top: 3.5rem;
+    }
+
+    .price-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 2.75rem 2.5rem;
+      position: relative;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .price-card:hover {
+      border-color: var(--fg);
+    }
+
+    .price-card.featured {
+      border-color: var(--fg);
+      background: var(--fg);
+      color: #fafaf9;
+    }
+
+    .price-card.featured .muted {
+      color: #a8a29e;
+    }
+
+    .price-card .badge {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      font-size: 0.7rem;
+      font-weight: 550;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.65rem;
+      background: var(--accent);
+      color: white;
+    }
+
+    .price-card h3 {
+      font-size: 1.25rem;
+      font-weight: 550;
+      margin-bottom: 0.5rem;
+    }
+
+    .price-card .price {
+      font-size: 2.35rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin: 1.25rem 0 0.35rem;
+    }
+
+    .price-card .price span {
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.7;
+    }
+
+    .price-card .desc {
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .price-card ul {
+      list-style: none;
+      margin-bottom: 2.25rem;
+    }
+
+    .price-card li {
+      font-size: 0.95rem;
+      padding: 0.45rem 0;
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+    }
+
+    .price-card li::before {
+      content: '—';
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .price-card.featured li::before {
+      color: #5eead4;
+    }
+
+    .price-card .btn {
+      width: 100%;
+    }
+
+    .price-card.featured .btn-primary {
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    .price-card.featured .btn-primary:hover {
+      background: #5eead4;
+      color: var(--fg);
+    }
+
+    .faq-list {
+      margin-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.75rem 0;
+    }
+
+    .faq-item summary {
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.35rem;
+      font-weight: 300;
+      color: var(--muted);
+      transition: transform 0.2s;
+    }
+
+    .faq-item[open] summary::after {
+      content: '−';
+    }
+
+    .faq-item p {
+      margin-top: 1.15rem;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.75;
+      max-width: 48rem;
+    }
+
+    .closing {
+      background: var(--fg);
+      color: #fafaf9;
+      text-align: center;
+      padding: clamp(6rem, 14vw, 10rem) 0;
+    }
+
+    .closing .display-sm {
+      max-width: 18ch;
+      margin-inline: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    .closing .lead {
+      color: #a8a29e;
+      margin-inline: auto;
+      margin-bottom: 2.75rem;
+    }
+
+    .closing .btn-primary {
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    .closing .btn-primary:hover {
+      background: #5eead4;
+    }
+
+    footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .problem-grid,
+      .values-grid,
+      .audience-list,
+      .process-steps,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tech-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tech-item {
+        border-right: none !important;
+      }
+
+      .tech-item:nth-last-child(2) {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .hero .display {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .btn-group {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">AI<span>Ready</span></a>
+      <ul class="nav-links">
+        <li><a href="#problem">痛点</a></li>
+        <li><a href="#solution">方案</a></li>
+        <li><a href="#values">价值</a></li>
+        <li><a href="#pricing">定价</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#cta" class="nav-cta">48小时定制</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <p class="section-label">AI-Ready Business Landing Page</p>
+      <h1 class="display">在新一代 AI 搜索引擎里，你的企业能被精准推荐吗？</h1>
+      <p class="lead">为 Google 传统搜索与 ChatGPT / Perplexity 智能搜索重新设计的新一代静态企业落地页。48 小时极速交付，让你的业务在 AI 时代获得“搜得到、读得懂、信得过”的数字通行证。</p>
+      <p class="hero-pain">80% 的海外高端客户正在使用 AI 寻找服务商，但你的传统网站对 AI 爬虫完全隐形。我们帮你重构网页结构，变成 AI 引擎的首选答案。</p>
+      <div class="btn-group">
+        <a href="#cta" class="btn btn-primary">48小时内，定制我的 AI-Ready 落地页</a>
+        <a href="#tech" class="btn btn-secondary">查看技术白皮书</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="problem" id="problem">
+    <div class="container">
+      <p class="section-label">The Problem</p>
+      <h2 class="display-sm">AI 时代的“隐形危机”</h2>
+      <p class="lead" style="color:#a8a29e; margin-top:1.25rem;">当意向客户已经开始用大模型决策时，你的网站却对它们保持沉默。</p>
+
+      <div class="problem-grid">
+        <div class="problem-card">
+          <h3>客户在问，AI 却推荐了别人</h3>
+          <p>“当你的意向客户在 ChatGPT 提问：‘美国加州有哪些精密的中国模具供应商？’，AI 给出的推荐名单里，为什么没有你？”</p>
+        </div>
+        <div class="problem-card">
+          <h3>网站排名尚可，AI 却读不懂</h3>
+          <p>你的网站在 Google 排名可能还可以，但因为结构混乱、没有配置 AI 通行证，大模型根本“读不懂”你的业务，甚至在回答中产生“幻觉”抹杀你的优势。</p>
+        </div>
+      </div>
+
+      <p class="problem-stat">传统 SEO 正在发生剧变。如果你不主动为 AI 优化，在多百万美元的跨国大单谈判开始前，你可能就已经被 AI 决策助手无形中过滤掉了。</p>
+    </div>
+  </section>
+
+  <section id="solution">
+    <div class="container">
+      <p class="section-label">The Solution</p>
+      <div class="solution-intro">
+        <h2 class="display-sm">AI-Ready Business Landing Page</h2>
+        <p class="lead" style="margin-top:1.25rem;">这不是一个普通的网站模板，而是一套将生成式引擎优化底层能力完美封装的企业级数字窗口。</p>
+      </div>
+
+      <div class="solution-pills">
+        <div class="pill"><strong>人看懂</strong> — 精美、极简、高转化率的前端视觉</div>
+        <div class="pill"><strong>AI 读懂</strong> — 语义化 HTML 与结构化数据对齐</div>
+        <div class="pill"><strong>信得过</strong> — 权威实体绑定，降低 AI 幻觉</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="values">
+    <div class="container">
+      <p class="section-label">Value Proposition</p>
+      <h2 class="display-sm">三大核心商业价值</h2>
+
+      <div class="values-grid">
+        <div class="value-item">
+          <div class="num">01</div>
+          <h3>AI 通行无阻</h3>
+          <p>内置标准化的 llms.txt 和优化过的 robots.txt、sitemap.xml，主动向各大 AI 爬虫挥手示意：“这里有最精准的业务事实，请直接抓取！”</p>
+        </div>
+        <div class="value-item">
+          <div class="num">02</div>
+          <h3>语义对齐，防止幻觉</h3>
+          <p>提供结构化的 Schema.org 数据和“直接回答”架构。让 ChatGPT、Claude 和 Perplexity 引用你时，能够精准吐出你的核心技术指标，而不是拼凑虚假信息。</p>
+        </div>
+        <div class="value-item">
+          <div class="num">03</div>
+          <h3>极速交付与无缝切换</h3>
+          <p>采用 80% 模版 + 20% 高级定制模式。你只需提供业务资料与域名，其余的底层重构、代码部署、CDN 加速全部由我们 48 小时内一站式搞定。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="section-label">Who It's For</p>
+      <h2 class="display-sm">谁最需要这个落地页？</h2>
+      <p class="lead" style="margin-top:1rem;">专为 B2B 专业服务企业设计的精准画像。</p>
+
+      <ul class="audience-list">
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <div>
+            <h4>咨询公司</h4>
+            <p>需要把方法论和成功案例结构化喂给 AI。</p>
+          </div>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <div>
+            <h4>出海 B2B 制造与贸易商</h4>
+            <p>面向海外高精密买家，消除询盘前的信任障碍。</p>
+          </div>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <div>
+            <h4>数字营销与 AI Agency</h4>
+            <p>用最新技术武装自己，作为自身实力的最好背书。</p>
+          </div>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div>
+            <h4>独立顾问、会计师与招聘机构</h4>
+            <p>建立个人与机构的权威实体绑定（Entity Authority）。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tech" id="tech">
+    <div class="container">
+      <p class="section-label">Technical Specifications</p>
+      <h2 class="display-sm">硬核规格</h2>
+      <p class="lead" style="margin-top:1rem;">给技术总监看的底气。专业度，一目了然。</p>
+
+      <div class="tech-grid">
+        <div class="tech-item">
+          <h4>语义接口 · Semantic HTML5</h4>
+          <p>100% 结构化语义，无垃圾嵌套。机器可读，人类可感。</p>
+        </div>
+        <div class="tech-item">
+          <h4>结构化实体 · Schema.org JSON-LD</h4>
+          <p>支持 Organization, Service, FAQ, Specialist 实体绑定。</p>
+        </div>
+        <div class="tech-item">
+          <h4>主动爬虫引导 · AI Crawler Configuration</h4>
+          <p>专门针对 OpenAI、Anthropic、Perplexity 的协议调优。</p>
+        </div>
+        <div class="tech-item">
+          <h4>高可提取性 · AEO Direct Answer Blocks</h4>
+          <p>采用低熵事实分块和答案优先的 FAQ 排版。</p>
+        </div>
+        <div class="tech-item">
+          <h4>边缘原生加速 · Edge-Native Deployment</h4>
+          <p>默认托管至 Vercel / Cloudflare 边缘节点，追求 100 分 Lighthouse 体验。</p>
+        </div>
+        <div class="tech-item">
+          <h4>AI 通行证文件</h4>
+          <p>内置优化的 llms.txt、robots.txt、sitemap.xml，主动向 AI 引擎示意。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="section-label">How It Works</p>
+      <h2 class="display-sm">极简三步，48 小时上线</h2>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <h3>提交资料</h3>
+          <p>填写极简业务信息表：域名、核心业务、服务规格、团队资质。我们只拿必要信息。</p>
+        </div>
+        <div class="process-step">
+          <h3>极速配置</h3>
+          <p>团队完成 80% 代码模板与 20% 业务实体的个性化配置与语义重构。</p>
+        </div>
+        <div class="process-step">
+          <h3>48H 交付上线</h3>
+          <p>帮客户托管部署上线，交付可以直接被大模型和真实用户无缝读取的高性能页面。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <p class="section-label">Pricing</p>
+      <h2 class="display-sm">标准化服务与阶梯定价</h2>
+      <p class="lead" style="margin-top:1rem;">为了加快资金回转周期，采用极简无压力的购买流程。</p>
+
+      <div class="pricing-grid">
+        <div class="price-card featured">
+          <div class="badge">主推</div>
+          <h3>AI-Ready Business Landing Page</h3>
+          <p class="desc muted">标准化极速建站</p>
+          <div class="price">$199–399 <span>/ ¥1,500–3,000</span></div>
+          <ul>
+            <li>品牌色定制与文案适配</li>
+            <li>SEO Heading 优化</li>
+            <li>Semantic HTML + JSON-LD 生成</li>
+            <li>FAQ / AEO 模块部署</li>
+            <li>llms.txt 配置</li>
+            <li>一键代部署上线</li>
+          </ul>
+          <a href="#cta" class="btn btn-primary">立即定制</a>
+        </div>
+
+        <div class="price-card">
+          <h3>AI-Ready Page + AI Visibility Setup</h3>
+          <p class="desc muted">尊享可见性起步方案</p>
+          <div class="price">$499–999 <span>/ ¥3,000–7,000</span></div>
+          <ul>
+            <li>主推款全部内容</li>
+            <li>建立 30 个目标问题的 AI 搜索基准报告</li>
+            <li>为后续 AI Visibility Audit 深度服务铺垫</li>
+            <li>更高优先级的实体绑定与优化</li>
+          </ul>
+          <a href="#cta" class="btn btn-secondary">选择此方案</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container-narrow">
+      <p class="section-label">FAQ</p>
+      <h2 class="display-sm">常见疑问</h2>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>我已经有官网了，为什么还要买这个落地页？</summary>
+          <p>传统官网往往体量庞大、代码陈旧且存在大量不利于 AI 爬取的杂音。这个 Landing Page 作为一个“AI 特使页面”，可以作为你现有域名的子域名（如 ai.yourcompany.com）或独立推广页，专为高价值 AI 搜索流量进行截流，与现有官网不冲突。</p>
+        </details>
+        <details class="faq-item">
+          <summary>你们能保证大模型 100% 推荐我吗？</summary>
+          <p>没有任何人能控制闭源大模型的输出。但我们能做到的是<strong>消除结构障碍</strong>。如果你的网页没有结构化 Schema 和 FAQ 直接回答模块，AI 推荐你的概率接近于 0；通过配置我们的落地页，你将直接进入 AI 爬虫的“第一梯队可读取源”。</p>
+        </details>
+        <details class="faq-item">
+          <summary>48 小时真的能上线吗？</summary>
+          <p>是的。我们通过“80% 标准化代码 + 20% 深度配置”的流水线作业，只要您在付款后提供完整的业务基础表格并授权域名解析，我们就能在 48 小时内让页面上线。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" id="cta">
+    <div class="container">
+      <h2 class="display-sm">流量的规则已经改变</h2>
+      <p class="lead">当你的竞争对手还在传统 SEO 里卷关键词时，领先的 B2B 服务商已经开始将网站重构为 AI 的答案节点。</p>
+      <a href="#" class="btn btn-primary">抢占 AI 搜索先机：立即定制您的 AI-Ready 落地页</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="logo">AI<span style="color:var(--accent)">Ready</span></div>
+      <p>© 2026 AI-Ready Landing Page. Built for people and AI search.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  </script>
+</body>
+</html>
