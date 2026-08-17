@@ -1,0 +1,20 @@
+/* TEAM */
+  Chief GEO Architect: Chief Architect / Kevin Liu
+  Contact: iaigeo [at] tutamail.com
+  Website: https://www.iaigeo.com/
+  GitHub: https://github.com/kevin131419344
+  LinkedIn: https://www.linkedin.com/in/openkevin
+  Background: Amadeus GDS Data Routing, Cross-Border Industrial Infrastructure, GEO/RAG Semantic Optimization
+
+/* ORGANIZATION */
+  Publisher: IAIGEO Research Lab
+  Core Focus: Generative Engine Optimization (GEO), Answer Engine Optimization (AIO), RAG Vector Retrieval Alignment
+  URL: https://www.iaigeo.com/
+
+/* SHOWCASE / CASE STUDIES */
+  Case Study 1: https://www.rapidfabpart.com/ (Precision Manufacturing GEO Protocol & Entity Alignment Implementation)
+
+/* SITE */
+  Standards: HTML5, JSON-LD, Schema.org, GEO Protocol 2026
+  Components: React, Next.js, TailwindCSS, RAG Vector Search
+  Doctype: HTML5
