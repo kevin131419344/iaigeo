@@ -31,6 +31,14 @@
     <priority>0.80</priority>
   </url>
 
+<!-- 可选补充：humans.txt 实体凭证节点 -->
+  <url>
+    <loc>https://www.iaigeo.com/humans.txt</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ======================================================================= -->
   <!-- 4. CORE KNOWLEDGE BASE: 以下为你 md 文件夹下的核心 Markdown 语料文件     -->
   <!-- ======================================================================= -->
