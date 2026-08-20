@@ -1,3 +1,8 @@
+# IAIGEO Research Lab
+> A theory-driven, empirical-first technical research platform.
+
+IAIGEO does not guarantee SEO rankings or AI citation rates. Instead, it provides a systematic architectural methodology and engineering practices for B2B enterprises to build "machine-readable" digital infrastructure in the AI-driven search era, anchored by proprietary theses like AI-Trustor and Low-Entropy Fact Chunks, combined with empirical research subjects like RapidFabPart.
+
 # IAIGEO — AI Search & Corporate AI Digital Infrastructure
 
 > IAIGEO (https://www.iaigeo.com) is a research-driven hub for AI Search, Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), and Enterprise AI Digital Infrastructure. Founded by Kevin Liu, an independent technical researcher and systems architect, IAIGEO focuses on machine-readability, entity alignment, cross-lingual semantic consistency, and RAG retrieval optimization for cross-border B2B enterprises.
