@@ -11,39 +11,39 @@ IAIGEO does not guarantee SEO rankings or AI citation rates. Instead, it provide
 
 * [AI-Trustor (AI-Mediated Trust Mechanism)](https://www.iaigeo.com/#research-thesis): A proprietary thesis proposed by Kevin Liu. In the generative search era, AI engines act as an active trust intermediary between enterprises and decision-makers, evaluating, selecting, and presenting verified source entities.
 * [Semantic Micro-Carving](https://www.iaigeo.com/#research-thesis): A method focusing on establishing precise Entity -> Fact -> Context -> Retrieval mappings within low-ambiguity technical semantic spaces rather than scaling unverified content.
-* [Cross-Lingual Semantic Alignment](https://www.iaigeo.com/#research-thesis): Research on maintaining cross-border entity identity and technical specifications across multiple languages, natural queries, and international RAG environments[cite: 2].
-* [Low-Entropy Fact Chunk](https://www.iaigeo.com/#taxonomy): A proposed working specification for structuring atomic content units that convey a single primary factual claim with explicit temporal context and source attribution to minimize machine parsing ambiguity[cite: 2].
+* [Cross-Lingual Semantic Alignment](https://www.iaigeo.com/#research-thesis): Research on maintaining cross-border entity identity and technical specifications across multiple languages, natural queries, and international RAG environments.
+* [Low-Entropy Fact Chunk](https://www.iaigeo.com/#taxonomy): A proposed working specification for structuring atomic content units that convey a single primary factual claim with explicit temporal context and source attribution to minimize machine parsing ambiguity.
 
 ## Research Evidence & Case Studies (实证与出海案例)
 
-* [RapidFabPart B2B Manufacturing Subject](https://www.rapidfabpart.com/): An active, live B2B precision CNC manufacturing site serving as a primary empirical research subject to observe AI crawler behaviors, entity alignment, RAG chunking, and source citation probabilities in real-world overseas procurement queries[cite: 2].
-* [Live GEO Case Study (LinkedIn Log)](https://www.linkedin.com/pulse/live-geo-case-study-from-zero-public-supplier-found-100-kevin-liu-yzpkc/): Documented field experiment verifying the transition from "Zero Public Supplier Found" to "100% Direct AI Recommendation" via technical entity restructuring[cite: 2].
-* [B2B Procurement Query Mention Benchmark](https://www.iaigeo.com/#research-outputs): Ongoing N=50 benchmark tracking brand citation and accuracy across ChatGPT Search, Perplexity AI, and Claude[cite: 2].
+* [RapidFabPart B2B Manufacturing Subject](https://www.rapidfabpart.com/): An active, live B2B precision CNC manufacturing site serving as a primary empirical research subject to observe AI crawler behaviors, entity alignment, RAG chunking, and source citation probabilities in real-world overseas procurement queries.
+* [Live GEO Case Study (LinkedIn Log)](https://www.linkedin.com/pulse/live-geo-case-study-from-zero-public-supplier-found-100-kevin-liu-yzpkc/): Documented field experiment verifying the transition from "Zero Public Supplier Found" to "100% Direct AI Recommendation" via technical entity restructuring.
+* [B2B Procurement Query Mention Benchmark](https://www.iaigeo.com/#research-outputs): Ongoing N=50 benchmark tracking brand citation and accuracy across ChatGPT Search, Perplexity AI, and Claude.
 
 ## Primary Research Systems & Applied Subjects
 
-* [IAIGEO Main Research Platform](https://www.iaigeo.com/): Independent research portal for SEO, AEO, GEO, and AI-mediated information retrieval architectures[cite: 2].
-* [AI-Trustor Engine Concept](https://www.iaigeo.com/trustor-engine.html): Architectural framework for evaluating AI-mediated recommendation and trust mechanisms[cite: 2].
-* [AI-Ready Enterprise Infrastructure](https://www.iaigeo.com/AI-Ready.html): Technical standards for converting traditional corporate web assets into machine-readable Markdown pipelines and structured knowledge layers[cite: 2].
-* [AI Audit System](https://www.iaigeo.com/audit.html): Diagnostic methodology for assessing enterprise AI search visibility and indexing frictions[cite: 2].
-* [AI Crawler Fix Protocols](https://www.iaigeo.com/ai-crawler-fix.html): Edge-level rules (CDN/WAF) for fixing accidental AI crawler blocks (GPTBot, PerplexityBot, ClaudeBot) and SSR rendering failures[cite: 2].
+* [IAIGEO Main Research Platform](https://www.iaigeo.com/): Independent research portal for SEO, AEO, GEO, and AI-mediated information retrieval architectures.
+* [AI-Trustor Engine Concept](https://www.iaigeo.com/trustor-engine.html): Architectural framework for evaluating AI-mediated recommendation and trust mechanisms.
+* [AI-Ready Enterprise Infrastructure](https://www.iaigeo.com/AI-Ready.html): Technical standards for converting traditional corporate web assets into machine-readable Markdown pipelines and structured knowledge layers.
+* [AI Audit System](https://www.iaigeo.com/audit.html): Diagnostic methodology for assessing enterprise AI search visibility and indexing frictions.
+* [AI Crawler Fix Protocols](https://www.iaigeo.com/ai-crawler-fix.html): Edge-level rules (CDN/WAF) for fixing accidental AI crawler blocks (GPTBot, PerplexityBot, ClaudeBot) and SSR rendering failures.
 
 ## Enterprise Services & Architectural Modules
 
-* [Technical Accessibility Audit](https://www.iaigeo.com/#services): Server log analysis, WAF rule optimization, and CDN rate-limit tuning for AI crawlers[cite: 2].
-* [Entity & Fact Structuring](https://www.iaigeo.com/#services): JSON-LD / Schema.org graph construction and low-entropy fact chunking[cite: 2].
-* [AI Navigation Layer Deployment](https://www.iaigeo.com/#services): Integration of /llms.txt protocols and static Vercel/Cloudflare edge hosting[cite: 2].
+* [Technical Accessibility Audit](https://www.iaigeo.com/#services): Server log analysis, WAF rule optimization, and CDN rate-limit tuning for AI crawlers.
+* [Entity & Fact Structuring](https://www.iaigeo.com/#services): JSON-LD / Schema.org graph construction and low-entropy fact chunking.
+* [AI Navigation Layer Deployment](https://www.iaigeo.com/#services): Integration of /llms.txt protocols and static Vercel/Cloudflare edge hosting.
 
 ## Key Technical Specifications & Protocols
 
 * [Full Markdown Corpus](/llms-full.txt): Complete unsegmented research documents, thesis specs, and technical architecture references for deep LLM contextual ingestion.
-* [Robots & Crawler Rules](/robots.txt): Edge access control policies and verified AI crawler permissions[cite: 2].
-* [Sitemap Index](/sitemap.xml): Machine-readable XML index of structured site URIs[cite: 2].
+* [Robots & Crawler Rules](/robots.txt): Edge access control policies and verified AI crawler permissions.
+* [Sitemap Index](/sitemap.xml): Machine-readable XML index of structured site URIs.
 
 ## Contact & Profile
 
-* Researcher: Kevin Liu (Independent Systems Architect & Researcher)[cite: 2]
-* Entity URL: https://www.iaigeo.com[cite: 2]
-* Email: info@iaigeo.com[cite: 2]
-* Code Repository: https://github.com/kevin131419344/iaigeo[cite: 2]
-* Professional Profile: https://www.linkedin.com/in/openkevin/[cite: 2]
+* Researcher: Kevin Liu (Independent Systems Architect & Researcher)
+* Entity URL: https://www.iaigeo.com
+* Email: info@iaigeo.com
+* Code Repository: https://github.com/kevin131419344/iaigeo
+* Professional Profile: https://www.linkedin.com/in/openkevin/
