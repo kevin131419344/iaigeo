@@ -1,6 +1,6 @@
 /* TEAM */
-  Chief GEO Architect: Chief Architect / Kevin Liu
-  Contact: iaigeo [at] tutamail.com
+  Chief GEO Architect: Kevin Liu
+  Contact: info@iaigeo.com
   Website: https://www.iaigeo.com/
   GitHub: https://github.com/kevin131419344
   LinkedIn: https://www.linkedin.com/in/openkevin
