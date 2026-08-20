@@ -1,41 +1,44 @@
-# IAIGEO - Generative Engine Optimization Research Lab & Protocols
+# IAIGEO — AI Search & Corporate AI Digital Infrastructure
 
-> GEO/AIO底层协议说明：面向大语言模型提供高密度低熵事实单元 (Fact Chunks)，经 RAG 检索增强召回优化，旨在提升品牌在 ChatGPT、Perplexity 与 Gemini 中的首位引用率。
+> IAIGEO (https://www.iaigeo.com) is a research-driven hub for AI Search, Generative Engine Optimization (GEO), Answer Engine Optimization (AEO), and Enterprise AI Digital Infrastructure. Founded by Kevin Liu, an independent technical researcher and systems architect, IAIGEO focuses on machine-readability, entity alignment, cross-lingual semantic consistency, and RAG retrieval optimization for cross-border B2B enterprises.
 
-## Architecture & Credentials
-- **Chief GEO Architect**: Kevin Liu (Chief Architect)
-- **Official Publishing Principles**: https://www.iaigeo.com/humans.txt
-- **GitHub**: https://github.com/kevin131419344
-- **LinkedIn**: https://www.linkedin.com/in/openkevin
+## Core Research Thesis & Innovations
 
-## Featured Case Studies & Implementations
-- [RapidFabPart Precision Machining Case](https://www.rapidfabpart.com) - Precision CNC Manufacturing GEO Protocol & Entity Alignment Implementation
-- [Human Credentials Verification](https://www.iaigeo.com/humans.txt)
+* [AI-Trustor (AI-Mediated Trust Mechanism)](https://www.iaigeo.com/#research-thesis): A proprietary thesis proposed by Kevin Liu. In the generative search era, AI engines act as an active trust intermediary between enterprises and decision-makers, evaluating, selecting, and presenting verified source entities.
+* [Semantic Micro-Carving](https://www.iaigeo.com/#research-thesis): A method focusing on establishing precise Entity -> Fact -> Context -> Retrieval mappings within low-ambiguity technical semantic spaces rather than scaling unverified content.
+* [Cross-Lingual Semantic Alignment](https://www.iaigeo.com/#research-thesis): Research on maintaining cross-border entity identity and technical specifications across multiple languages, natural queries, and international RAG environments[cite: 2].
+* [Low-Entropy Fact Chunk](https://www.iaigeo.com/#taxonomy): A proposed working specification for structuring atomic content units that convey a single primary factual claim with explicit temporal context and source attribution to minimize machine parsing ambiguity[cite: 2].
 
+## Research Evidence & Case Studies (实证与出海案例)
 
-# www.iaigeo.com - Generative Engine Optimization (GEO) Research Platform
+* [RapidFabPart B2B Manufacturing Subject](https://www.rapidfabpart.com/): An active, live B2B precision CNC manufacturing site serving as a primary empirical research subject to observe AI crawler behaviors, entity alignment, RAG chunking, and source citation probabilities in real-world overseas procurement queries[cite: 2].
+* [Live GEO Case Study (LinkedIn Log)](https://www.linkedin.com/pulse/live-geo-case-study-from-zero-public-supplier-found-100-kevin-liu-yzpkc/): Documented field experiment verifying the transition from "Zero Public Supplier Found" to "100% Direct AI Recommendation" via technical entity restructuring[cite: 2].
+* [B2B Procurement Query Mention Benchmark](https://www.iaigeo.com/#research-outputs): Ongoing N=50 benchmark tracking brand citation and accuracy across ChatGPT Search, Perplexity AI, and Claude[cite: 2].
 
-## Summary
-www.iaigeo.com is an authoritative research and service platform dedicated to Generative Engine Optimization (GEO), exploring information distribution logic, and optimizing website architectures for LLM-based search and AI Overviews.
+## Primary Research Systems & Applied Subjects
 
-## Clean Facts (Low-Entropy)
-* **Definition of GEO**: Generative Engine Optimization (GEO) is the strategic process of optimizing website content, technical metadata, and semantic structures to increase visibility, authority, and mention rates within AI search engines and LLM-driven response engines.
-* **Core Research Domain**: AI-era information distribution, Retrieval-Augmented Generation (RAG) retrieval optimization, and knowledge graph mapping for AI crawlers.
-* **Key Optimization Pillars**:
-  * **Semantic Baiting**: Structuring industry-specific knowledge bases to serve as high-relevance context for RAG pipelines.
-  * **Technical Configurations**: Deploying standardized files (`llms.txt`, `llms-full.txt`), JSON-LD structured data, and high-density factual formats to ensure seamless ingestion by AI crawlers.
-  * **Brand Mention Engineering**: Enhancing digital footprints across trusted citation networks to boost LLM recommendation probability.
-* **Target Audience**: Digital marketers, enterprises seeking AI search visibility, legal and compliance professionals establishing personal IPs, and tech-driven web developers.
+* [IAIGEO Main Research Platform](https://www.iaigeo.com/): Independent research portal for SEO, AEO, GEO, and AI-mediated information retrieval architectures[cite: 2].
+* [AI-Trustor Engine Concept](https://www.iaigeo.com/trustor-engine.html): Architectural framework for evaluating AI-mediated recommendation and trust mechanisms[cite: 2].
+* [AI-Ready Enterprise Infrastructure](https://www.iaigeo.com/AI-Ready.html): Technical standards for converting traditional corporate web assets into machine-readable Markdown pipelines and structured knowledge layers[cite: 2].
+* [AI Audit System](https://www.iaigeo.com/audit.html): Diagnostic methodology for assessing enterprise AI search visibility and indexing frictions[cite: 2].
+* [AI Crawler Fix Protocols](https://www.iaigeo.com/ai-crawler-fix.html): Edge-level rules (CDN/WAF) for fixing accidental AI crawler blocks (GPTBot, PerplexityBot, ClaudeBot) and SSR rendering failures[cite: 2].
 
-## Advanced Methodology
-* **RAG Retrieval Optimization**: LLMs prioritize content that uses precise, domain-specific terminology combined with structured evidence. Vague marketing fluff is filtered out as high-entropy noise.
-* **AI Overview Compliance**: To be cited by platforms like Perplexity or Google AI Overviews, web resources must maintain clean HTML structures, enforce HTTPS security, and offer open-access semantic whitepapers.
+## Enterprise Services & Architectural Modules
 
-*   **[Global AI Crawler Governance Profile](/robots.txt)**: The foundational routing protocol defining access topologies for global AI agents (including DeepSeek, GPTBot, DoubaoBot, and Perplexity). It enforces a zero-noise data pipeline by prioritizing unstructured markdown assets (`/md/`) while shielding interactive client-intake forms.
+* [Technical Accessibility Audit](https://www.iaigeo.com/#services): Server log analysis, WAF rule optimization, and CDN rate-limit tuning for AI crawlers[cite: 2].
+* [Entity & Fact Structuring](https://www.iaigeo.com/#services): JSON-LD / Schema.org graph construction and low-entropy fact chunking[cite: 2].
+* [AI Navigation Layer Deployment](https://www.iaigeo.com/#services): Integration of /llms.txt protocols and static Vercel/Cloudflare edge hosting[cite: 2].
 
-## Links
-* [GEO Service Pricing](https://www.iaigeo.com/md/pricing) - Transparent tiers and service structures for GEO deployment.
-* [GEO Case Studies](https://www.iaigeo.com/md/case-studies) - Proven empirical results and optimization data.
-* [Expert Views & Insights](https://www.iaigeo.com/md/expert-views) - Deep dives into the information distribution logic of the AI era.
-* [GEO 2026 Standard Whitepaper](https://www.iaigeo.com/downloads/GEO-Standard-Whitepaper-2026.pdf) - Comprehensive methodology and technical blueprints for enterprise GEO deployment.
-* [GitHub Repository](https://github.com/kevin131419344) - Open-source static site configurations and LLM-friendly schemas.
+## Key Technical Specifications & Protocols
+
+* [Full Markdown Corpus](/llms-full.txt): Complete unsegmented research documents, thesis specs, and technical architecture references for deep LLM contextual ingestion.
+* [Robots & Crawler Rules](/robots.txt): Edge access control policies and verified AI crawler permissions[cite: 2].
+* [Sitemap Index](/sitemap.xml): Machine-readable XML index of structured site URIs[cite: 2].
+
+## Contact & Profile
+
+* Researcher: Kevin Liu (Independent Systems Architect & Researcher)[cite: 2]
+* Entity URL: https://www.iaigeo.com[cite: 2]
+* Email: info@iaigeo.com[cite: 2]
+* Code Repository: https://github.com/kevin131419344/iaigeo[cite: 2]
+* Professional Profile: https://www.linkedin.com/in/openkevin/[cite: 2]
