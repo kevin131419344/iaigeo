@@ -135,18 +135,23 @@
         }
 
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-        .logo { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; letter-spacing: 0.15em; color: var(--text-main); }
+        .logo { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; letter-spacing: 0.15em; color: var(--text-main); flex-shrink: 0; }
         .logo span { color: var(--accent-gold); }
 
         .nav-links { display: flex; gap: 2.8rem; list-style: none; }
-        .nav-links a { font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; padding: 4px 0; }
+        .nav-links a { font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; padding: 4px 0; white-space: nowrap; }
         .nav-links a:hover { color: var(--accent-gold); }
+
+        /* 移动端菜单切换按钮（默认隐藏） */
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text-main); margin: 4px 0; transition: var(--transition); }
 
         .btn {
             display: inline-flex; align-items: center; justify-content: center;
             padding: 0.85rem 1.7rem; font-size: 0.78rem; font-family: var(--font-mono);
             text-transform: uppercase; letter-spacing: 0.1em; border-radius: 2px;
             cursor: pointer; transition: var(--transition);
+            white-space: nowrap;
         }
 
         .btn-primary { background: var(--text-main); color: #ffffff; border: 1px solid var(--text-main); font-weight: 700; }
@@ -231,9 +236,47 @@
         }
 
         @media (max-width: 992px) {
-            .hero { grid-template-columns: 1fr; gap: 2.5rem; }
+            .hero { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 8rem; }
             .hero-right { border-left: none; padding-left: 0; }
             .services-grid, .researcher-grid { grid-template-columns: 1fr; }
+            
+            /* --- 移动端导航自适应逻辑 --- */
+            .nav-container {
+                height: auto;
+                min-height: 60px;
+                flex-wrap: wrap;
+                padding: 0.8rem 1.5rem;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .nav-btn-wrapper {
+                display: none; /* 移动端在折叠菜单内展现或隐藏按钮以保持简洁 */
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0 0.5rem 0;
+                border-top: 1px solid var(--border-subtle);
+                margin-top: 0.8rem;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links li {
+                width: 100%;
+            }
+            .nav-links a {
+                display: block;
+                padding: 0.75rem 0;
+                font-size: 0.9rem;
+                border-bottom: 1px dashed var(--border-subtle);
+            }
+            .nav-links li:last-child a {
+                border-bottom: none;
+            }
         }
     </style>
     <style>
@@ -272,7 +315,15 @@
 <nav>
 <div class="container nav-container">
 <a class="logo" href="/">IAI<span>GEO</span></a>
-<ul class="nav-links">
+
+<!-- 移动端汉堡菜单按钮 -->
+<button class="nav-toggle" id="navToggle" aria-label="切换导航菜单">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+<ul class="nav-links" id="navLinks">
 <li><a href="#researcher">研究者</a></li>
 <li><a href="#research-thesis">命题</a></li>
 <li><a href="#research-outputs">证据</a></li>
@@ -281,11 +332,13 @@
 <li><a href="#framework">技术架构</a></li>
 <li><a href="#services">应用实践</a></li>
 </ul>
-<div>
+
+<div class="nav-btn-wrapper">
 <a class="btn btn-secondary" href="#contact">研究与职业合作</a>
 </div>
 </div>
 </nav>
+
 <!-- HERO SECTION -->
 <section class="hero container">
 <div>
@@ -310,6 +363,7 @@
 <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.65;"><strong>研究原则：</strong>不声称能够控制或保证第三方 AI 输出。本研究关注实体一致性、来源透明度、结构化可访问性与检索概率；第三方平台的索引、引用与生成结果仍取决于平台算法。</p>
 </div>
 </section>
+
 <!-- SECTION 1 // RESEARCHER PROFILE & CREDENTIALS (PRIORITY SECTION) -->
 <section id="researcher">
 <div class="container">
@@ -500,6 +554,7 @@
             </div>
 </div>
 </section>
+
 <!-- SECTION 3 // ARCHITECTURE & CRAWLER AUDIT -->
 <section id="framework">
 <div class="container">
@@ -582,6 +637,7 @@
             </p>
 </div>
 </section>
+
 <!-- SECTION 5 // EVALUATION PROTOCOL -->
 <section id="eval">
 <div class="container">
@@ -606,6 +662,7 @@
 </div>
 </div>
 </section>
+
 <!-- SECTION 6 // CONTACT & ENGAGEMENT -->
 <section id="contact">
 <div class="container" style="max-width: 800px; text-align: center;">
@@ -633,6 +690,7 @@
             </div>
 </div>
 </section>
+
 <!-- FOOTER -->
 <footer>
 <div class="container" style="padding: 3rem 2rem;">
@@ -678,6 +736,26 @@
 </div>
 </div>
 </footer>
+
+<!-- 导航交互脚本 -->
+<script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // 点击导航项后自动收起菜单
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
