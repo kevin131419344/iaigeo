@@ -1,52 +1,84 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI-Ready Landing Page — 为真实客户与 AI 搜索而建</title>
-  <meta name="description" content="为 Google 传统搜索与 ChatGPT / Perplexity 智能搜索重新设计的新一代静态企业落地页。48 小时极速交付。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>AI-Ready｜让 AI 找到你的企业，让海外客户看懂你的价值</title>
+
+  <meta
+    name="description"
+    content="AI-Ready 为外贸企业打造 AI 销售落地页，让 Google、ChatGPT、Perplexity 和海外客户更容易理解你的企业、产品、资质与交付能力，提高有效询盘转化。"
+  />
+
+  <meta
+    name="keywords"
+    content="AI-Ready,GEO,AI搜索优化,外贸网站,外贸获客,AI销售落地页,海外客户,有效询盘"
+  />
+
+  <meta name="author" content="Kevin_Liu" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI-Ready｜让 AI 找到你的企业，让海外客户看懂你的价值" />
+  <meta
+    property="og:description"
+    content="专为外贸企业打造的 AI 销售落地页。让企业在 AI 搜索时代做到：搜得到、读得懂、信得过、愿意询盘。"
+  />
+  <meta property="og:url" content="https://www.iaigeo.com/AI-Ready.html" />
+
+  <link rel="canonical" href="https://www.iaigeo.com/AI-Ready.html" />
+
   <style>
     :root {
-      --bg: #fafaf9;
-      --fg: #111110;
-      --muted: #6b6b66;
-      --accent: #0f766e;
-      --accent-hover: #0d9488;
-      --border: #e7e5e4;
-      --card: #ffffff;
-      --radius: 2px;
+      --bg: #050505;
+      --bg-soft: #0d0d0f;
+      --card: rgba(255, 255, 255, 0.045);
+      --card-hover: rgba(255, 255, 255, 0.075);
+      --border: rgba(255, 255, 255, 0.12);
+      --border-light: rgba(255, 255, 255, 0.2);
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --muted-light: #d4d4d8;
+      --accent: #a3ff12;
+      --accent-dark: #79c500;
+      --blue: #8ab4ff;
+      --max-width: 1180px;
+      --radius: 22px;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
-      font-size: 16px;
     }
 
     body {
-      font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
+      background:
+        radial-gradient(
+          circle at 50% -10%,
+          rgba(163, 255, 18, 0.11),
+          transparent 34rem
+        ),
+        var(--bg);
+      color: var(--text);
+      font-family:
+        Inter,
+        "PingFang SC",
+        "Microsoft YaHei",
+        "Noto Sans SC",
+        Arial,
+        sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
     a {
@@ -55,909 +87,1373 @@
     }
 
     img {
-      max-width: 100%;
       display: block;
-    }
-
-    .display {
-      font-size: clamp(2.75rem, 6.5vw, 4.75rem);
-      font-weight: 600;
-      line-height: 1.08;
-      letter-spacing: -0.035em;
-    }
-
-    .display-sm {
-      font-size: clamp(1.85rem, 3.8vw, 2.75rem);
-      font-weight: 600;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-    }
-
-    .lead {
-      font-size: clamp(1.125rem, 1.6vw, 1.35rem);
-      font-weight: 400;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 38rem;
-    }
-
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
+      max-width: 100%;
     }
 
     .container {
-      width: min(1120px, 92%);
-      margin-inline: auto;
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
     }
 
-    .container-narrow {
-      width: min(720px, 92%);
-      margin-inline: auto;
+    .section {
+      padding: 120px 0;
+      position: relative;
     }
 
-    section {
-      padding: clamp(5rem, 12vw, 9rem) 0;
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
     }
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(250, 250, 249, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s ease;
+    .section-title {
+      max-width: 760px;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+      margin-bottom: 24px;
     }
 
-    nav.scrolled {
-      border-bottom-color: var(--border);
+    .section-desc {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 720px;
     }
 
-    .nav-inner {
+    .gradient-text {
+      background: linear-gradient(110deg, #ffffff 10%, var(--accent) 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .btn-group {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      height: 4.25rem;
-      width: min(1120px, 92%);
-      margin-inline: auto;
-    }
-
-    .logo {
-      font-weight: 600;
-      font-size: 1.05rem;
-      letter-spacing: -0.02em;
-    }
-
-    .logo span {
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.25rem;
-      list-style: none;
-      font-size: 0.9rem;
-      font-weight: 450;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--fg);
-    }
-
-    .nav-cta {
-      font-size: 0.875rem;
-      font-weight: 500;
-      padding: 0.55rem 1.15rem;
-      background: var(--fg);
-      color: var(--bg);
-      border-radius: var(--radius);
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .nav-cta:hover {
-      background: var(--accent);
-      transform: translateY(-1px);
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
-      font-size: 0.95rem;
-      font-weight: 500;
-      padding: 0.95rem 1.75rem;
-      border-radius: var(--radius);
-      border: none;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 1px solid var(--border-light);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.25s ease;
       cursor: pointer;
-      transition: all 0.2s ease;
-      text-decoration: none;
     }
 
     .btn-primary {
-      background: var(--fg);
-      color: var(--bg);
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #080808;
     }
 
     .btn-primary:hover {
-      background: var(--accent);
-      transform: translateY(-1px);
+      background: #bdff52;
+      border-color: #bdff52;
+      transform: translateY(-2px);
     }
 
     .btn-secondary {
-      background: transparent;
-      color: var(--fg);
-      border: 1px solid var(--border);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.025);
     }
 
     .btn-secondary:hover {
-      border-color: var(--fg);
-      background: var(--fg);
-      color: var(--bg);
+      background: var(--card-hover);
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
-    .btn-group {
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(5, 5, 5, 0.78);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 72px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-top: 2.5rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .logo-mark {
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
+      background: var(--accent);
+      box-shadow: 0 0 28px rgba(163, 255, 18, 0.35);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      color: var(--muted-light);
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      min-height: 38px;
+      padding: 0 17px;
+      font-size: 12px;
     }
 
     .hero {
-      padding-top: clamp(8.5rem, 16vw, 12rem);
-      padding-bottom: clamp(5rem, 10vw, 8rem);
-      min-height: 92vh;
+      min-height: 780px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero .display {
-      max-width: 18ch;
-      margin-bottom: 1.75rem;
-    }
-
-    .hero .lead {
-      max-width: 36rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-pain {
-      font-size: 1.05rem;
-      color: var(--fg);
-      max-width: 34rem;
-      margin-top: 1.75rem;
-      padding-left: 1.25rem;
-      border-left: 2px solid var(--accent);
-      line-height: 1.7;
-    }
-
-    .problem {
-      background: var(--fg);
-      color: #f5f5f4;
-    }
-
-    .problem .section-label {
-      color: #5eead4;
-    }
-
-    .problem .lead {
-      color: #a8a29e;
-    }
-
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
-      margin-top: 3.5rem;
-    }
-
-    .problem-card h3 {
-      font-size: 1.2rem;
-      font-weight: 500;
-      margin-bottom: 1rem;
-      letter-spacing: -0.01em;
-    }
-
-    .problem-card p {
-      color: #a8a29e;
-      font-size: 1.02rem;
-      line-height: 1.75;
-    }
-
-    .problem-stat {
-      margin-top: 3.5rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid #292524;
-      font-size: 1.15rem;
-      max-width: 40rem;
-      color: #d6d3d1;
-    }
-
-    .solution-intro {
-      max-width: 40rem;
-    }
-
-    .solution-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 2.75rem;
-    }
-
-    .pill {
-      font-size: 0.9rem;
-      font-weight: 500;
-      padding: 0.65rem 1.15rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--card);
-    }
-
-    .pill strong {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-      margin-top: 4rem;
-    }
-
-    .value-item {
-      padding-top: 1.75rem;
-      border-top: 2px solid var(--fg);
-    }
-
-    .value-item .num {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--accent);
-      letter-spacing: 0.06em;
-      margin-bottom: 1rem;
-    }
-
-    .value-item h3 {
-      font-size: 1.35rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-      line-height: 1.3;
-    }
-
-    .value-item p {
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    .audience-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem 3rem;
-      margin-top: 3rem;
-      list-style: none;
-    }
-
-    .audience-list li {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .audience-list .icon {
-      flex-shrink: 0;
-      width: 1.5rem;
-      height: 1.5rem;
-      margin-top: 0.15rem;
-      color: var(--accent);
-    }
-
-    .audience-list h4 {
-      font-size: 1.05rem;
-      font-weight: 550;
-      margin-bottom: 0.35rem;
-    }
-
-    .audience-list p {
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .tech {
-      background: #f5f5f4;
-    }
-
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0;
-      margin-top: 3.5rem;
-      border: 1px solid var(--border);
-      background: var(--card);
-    }
-
-    .tech-item {
-      padding: 2rem 2.25rem;
-      border-bottom: 1px solid var(--border);
-      border-right: 1px solid var(--border);
-    }
-
-    .tech-item:nth-child(2n) {
-      border-right: none;
-    }
-
-    .tech-item:nth-last-child(-n+2) {
-      border-bottom: none;
-    }
-
-    .tech-item h4 {
-      font-size: 1rem;
-      font-weight: 550;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.01em;
-    }
-
-    .tech-item p {
-      font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 3.5rem;
-      counter-reset: step;
-    }
-
-    .process-step {
+      align-items: center;
+      padding: 130px 0 115px;
+      text-align: center;
       position: relative;
-      padding-top: 3.5rem;
     }
 
-    .process-step::before {
-      counter-increment: step;
-      content: "0" counter(step);
+    .hero::before {
+      content: "";
+      width: 620px;
+      height: 620px;
+      border: 1px solid rgba(163, 255, 18, 0.08);
+      border-radius: 50%;
       position: absolute;
-      top: 0;
-      left: 0;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: -0.02em;
+      top: 75px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
     }
 
-    .process-step h3 {
-      font-size: 1.15rem;
-      font-weight: 550;
-      margin-bottom: 0.75rem;
+    .hero::after {
+      content: "";
+      width: 940px;
+      height: 360px;
+      border: 1px solid rgba(163, 255, 18, 0.06);
+      border-radius: 50%;
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
     }
 
-    .process-step p {
-      font-size: 0.98rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.75rem;
-      margin-top: 3.5rem;
-    }
-
-    .price-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 2.75rem 2.5rem;
+    .hero-content {
       position: relative;
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-
-    .price-card:hover {
-      border-color: var(--fg);
-    }
-
-    .price-card.featured {
-      border-color: var(--fg);
-      background: var(--fg);
-      color: #fafaf9;
-    }
-
-    .price-card.featured .muted {
-      color: #a8a29e;
-    }
-
-    .price-card .badge {
-      position: absolute;
-      top: 1.25rem;
-      right: 1.25rem;
-      font-size: 0.7rem;
-      font-weight: 550;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.65rem;
-      background: var(--accent);
-      color: white;
-    }
-
-    .price-card h3 {
-      font-size: 1.25rem;
-      font-weight: 550;
-      margin-bottom: 0.5rem;
-    }
-
-    .price-card .price {
-      font-size: 2.35rem;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-      margin: 1.25rem 0 0.35rem;
-    }
-
-    .price-card .price span {
-      font-size: 1rem;
-      font-weight: 400;
-      opacity: 0.7;
-    }
-
-    .price-card .desc {
-      font-size: 0.95rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .price-card ul {
-      list-style: none;
-      margin-bottom: 2.25rem;
-    }
-
-    .price-card li {
-      font-size: 0.95rem;
-      padding: 0.45rem 0;
-      display: flex;
-      gap: 0.65rem;
-      align-items: flex-start;
-    }
-
-    .price-card li::before {
-      content: '—';
-      color: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .price-card.featured li::before {
-      color: #5eead4;
-    }
-
-    .price-card .btn {
+      z-index: 1;
       width: 100%;
     }
 
-    .price-card.featured .btn-primary {
-      background: var(--bg);
-      color: var(--fg);
+    .hero h1 {
+      max-width: 980px;
+      margin: 0 auto;
+      font-size: clamp(44px, 7vw, 88px);
+      line-height: 1.05;
+      letter-spacing: -0.065em;
+      font-weight: 800;
     }
 
-    .price-card.featured .btn-primary:hover {
-      background: #5eead4;
-      color: var(--fg);
+    .hero-subtitle {
+      max-width: 700px;
+      margin: 28px auto 0;
+      color: var(--muted);
+      font-size: 18px;
     }
 
-    .faq-list {
-      margin-top: 3rem;
-      border-top: 1px solid var(--border);
+    .hero .btn-group {
+      justify-content: center;
     }
 
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 1.75rem 0;
+    .hero-note {
+      margin-top: 18px;
+      color: #71717a;
+      font-size: 13px;
     }
 
-    .faq-item summary {
-      font-size: 1.1rem;
-      font-weight: 500;
-      cursor: pointer;
+    .problem-grid,
+    .value-grid,
+    .audience-grid,
+    .tech-grid,
+    .process-grid,
+    .pricing-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .problem-grid {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 60px;
+    }
+
+    .value-grid {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 58px;
+    }
+
+    .audience-grid {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 58px;
+    }
+
+    .tech-grid {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 58px;
+    }
+
+    .process-grid {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 58px;
+    }
+
+    .pricing-grid {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 58px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      background: var(--card-hover);
+      border-color: rgba(163, 255, 18, 0.42);
+      transform: translateY(-4px);
+    }
+
+    .card-number {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      margin-bottom: 22px;
+    }
+
+    .card h3 {
+      color: var(--text);
+      font-size: 22px;
+      line-height: 1.3;
+      margin-bottom: 13px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card ul,
+    .price-card ul {
       list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
-      letter-spacing: -0.01em;
+      margin-top: 22px;
     }
 
-    .faq-item summary::-webkit-details-marker {
+    .card li,
+    .price-card li {
+      position: relative;
+      padding-left: 21px;
+      margin: 10px 0;
+      color: var(--muted-light);
+      font-size: 14px;
+    }
+
+    .card li::before,
+    .price-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .quote-box {
+      margin-top: 42px;
+      padding: 30px;
+      border-left: 2px solid var(--accent);
+      background: linear-gradient(
+        90deg,
+        rgba(163, 255, 18, 0.08),
+        transparent
+      );
+      color: var(--muted-light);
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .quote-box strong {
+      color: var(--accent);
+    }
+
+    .feature-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(163, 255, 18, 0.45);
+      border-radius: 50%;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .tech-item {
+      min-height: 240px;
+    }
+
+    .tech-label {
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .tech-item h3 {
+      font-size: 20px;
+    }
+
+    .tech-item code {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 4px 8px;
+      border: 1px solid rgba(163, 255, 18, 0.2);
+      border-radius: 5px;
+      color: var(--accent);
+      font-size: 12px;
+      background: rgba(163, 255, 18, 0.06);
+    }
+
+    .step-card {
+      position: relative;
+      min-height: 245px;
+    }
+
+    .step-card::after {
+      content: "";
+      position: absolute;
+      top: 48px;
+      right: -28px;
+      width: 38px;
+      height: 1px;
+      background: rgba(163, 255, 18, 0.5);
+    }
+
+    .step-card:last-child::after {
       display: none;
     }
 
-    .faq-item summary::after {
-      content: '+';
-      font-size: 1.35rem;
-      font-weight: 300;
+    .step-number {
+      color: var(--accent);
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .price-card {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .price-card.featured {
+      border-color: rgba(163, 255, 18, 0.62);
+      box-shadow: 0 0 60px rgba(163, 255, 18, 0.08);
+    }
+
+    .price-badge {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      color: #080808;
+      background: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .price-card h3 {
+      font-size: 28px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .price-card h4 {
       color: var(--muted);
-      transition: transform 0.2s;
+      font-size: 15px;
+      font-weight: 400;
+      margin-bottom: 28px;
     }
 
-    .faq-item[open] summary::after {
-      content: '−';
+    .price {
+      color: var(--accent);
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
     }
 
-    .faq-item p {
-      margin-top: 1.15rem;
+    .price-card .btn {
+      margin-top: auto;
+    }
+
+    .faq-list {
+      max-width: 900px;
+      margin: 58px auto 0;
+    }
+
+    details {
+      border-bottom: 1px solid var(--border);
+      padding: 23px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 700;
+      padding-right: 35px;
+      position: relative;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      top: -3px;
+      right: 0;
+      color: var(--accent);
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      max-width: 820px;
+      margin-top: 14px;
       color: var(--muted);
-      font-size: 1.02rem;
-      line-height: 1.75;
-      max-width: 48rem;
+      font-size: 15px;
     }
 
-    .closing {
-      background: var(--fg);
-      color: #fafaf9;
+    .cta-section {
+      padding: 140px 0;
       text-align: center;
-      padding: clamp(6rem, 14vw, 10rem) 0;
+      position: relative;
+      overflow: hidden;
     }
 
-    .closing .display-sm {
-      max-width: 18ch;
-      margin-inline: auto;
-      margin-bottom: 1.5rem;
+    .cta-section::before {
+      content: "";
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(163, 255, 18, 0.1);
+      border-radius: 50%;
+      pointer-events: none;
     }
 
-    .closing .lead {
-      color: #a8a29e;
-      margin-inline: auto;
-      margin-bottom: 2.75rem;
+    .cta-content {
+      position: relative;
+      z-index: 1;
     }
 
-    .closing .btn-primary {
-      background: var(--bg);
-      color: var(--fg);
+    .cta-section h2 {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: clamp(38px, 6vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -0.06em;
     }
 
-    .closing .btn-primary:hover {
-      background: #5eead4;
-    }
-
-    footer {
-      padding: 2.5rem 0;
-      border-top: 1px solid var(--border);
-      font-size: 0.875rem;
+    .cta-section p {
+      max-width: 680px;
+      margin: 25px auto 0;
       color: var(--muted);
+      font-size: 17px;
+    }
+
+    .cta-section .btn-group {
+      justify-content: center;
+    }
+
+    .site-footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      color: #71717a;
+      font-size: 13px;
     }
 
     .footer-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
+      justify-content: space-between;
+      gap: 20px;
     }
 
-    @media (max-width: 900px) {
-      .nav-links {
-        display: none;
+    @media (max-width: 850px) {
+      .problem-grid,
+      .value-grid,
+      .audience-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
       }
 
-      .problem-grid,
-      .values-grid,
-      .audience-list,
-      .process-steps,
+      .tech-grid,
       .pricing-grid {
         grid-template-columns: 1fr;
       }
 
-      .tech-grid {
-        grid-template-columns: 1fr;
+      .step-card::after {
+        display: none;
       }
 
-      .tech-item {
-        border-right: none !important;
+      .nav-links {
+        display: none;
       }
 
-      .tech-item:nth-last-child(2) {
-        border-bottom: 1px solid var(--border);
-      }
-
-      .hero .display {
-        max-width: none;
+      .hero {
+        min-height: 680px;
+        padding-top: 90px;
       }
     }
 
-    @media (max-width: 600px) {
-      .btn-group {
-        flex-direction: column;
+    @media (max-width: 560px) {
+      .container {
+        width: min(var(--max-width), calc(100% - 28px));
       }
 
-      .btn {
-        width: 100%;
+      .section {
+        padding: 80px 0;
+      }
+
+      .hero {
+        padding: 80px 0;
+      }
+
+      .hero-subtitle,
+      .section-desc {
+        font-size: 15px;
+      }
+
+      .card {
+        padding: 23px;
+        border-radius: 17px;
+      }
+
+      .quote-box {
+        padding: 22px;
+        font-size: 17px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
   </style>
+
+  <!-- 企业实体结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "AI-Ready",
+    "url": "https://www.iaigeo.com/AI-Ready.html",
+    "description": "为外贸企业打造 AI 销售落地页，让 AI 和海外客户更容易理解企业、产品、资质与交付能力。",
+    "serviceType": [
+      "AI 销售落地页",
+      "GEO 网站优化",
+      "AI 搜索可见性优化",
+      "外贸网站内容优化"
+    ],
+    "areaServed": "Worldwide"
+  }
+  </script>
+
+  <!-- FAQ 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "我已经有官网了，为什么还需要 AI-Ready？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI-Ready 可以作为现有官网的补充页面，专门服务于 AI 搜索理解、海外客户判断和外贸询盘转化，不需要立即重做整个官网。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AI-Ready 能保证 ChatGPT 一定推荐我的公司吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不能保证任何 AI 系统一定推荐某家公司。AI-Ready 的作用是改善企业信息的结构、清晰度和可读取性，帮助 AI 更准确地发现、理解和引用企业内容。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AI-Ready 与普通 SEO 有什么不同？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "普通 SEO 主要关注关键词、收录和搜索排名。AI-Ready 进一步关注 AI 是否理解企业、产品、客户场景、优势和联系方式。两者可以结合使用。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "这个页面适合工厂还是贸易公司？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "工厂和贸易公司都适合。工厂可以重点展示生产、质量和定制能力；贸易公司可以重点展示产品组合、供应链、出口和交付服务。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "AI-Ready 会直接提高我的转化率吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI-Ready 不能替代产品、报价、销售跟进和交付能力，但可以改善客户发现、理解、信任和联系企业之前的关键环节，帮助提升有效询盘质量。"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
+
 <body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="logo" aria-label="AI-Ready 首页">
+        <span class="logo-mark"></span>
+        <span>AI-Ready</span>
+      </a>
 
-  <nav id="nav">
-    <div class="nav-inner">
-      <a href="#" class="logo">AI<span>Ready</span></a>
-      <ul class="nav-links">
-        <li><a href="#problem">痛点</a></li>
-        <li><a href="#solution">方案</a></li>
-        <li><a href="#values">价值</a></li>
-        <li><a href="#pricing">定价</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-      <a href="#cta" class="nav-cta">48小时定制</a>
-    </div>
-  </nav>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="#problem">问题</a>
+        <a href="#solution">解决方案</a>
+        <a href="#technology">技术</a>
+        <a href="#process">流程</a>
+        <a href="#pricing">价格</a>
+        <a href="#faq">FAQ</a>
+      </nav>
 
-  <header class="hero">
-    <div class="container">
-      <p class="section-label">AI-Ready Business Landing Page</p>
-      <h1 class="display">在新一代 AI 搜索引擎里，你的企业能被精准推荐吗？</h1>
-      <p class="lead">为 Google 传统搜索与 ChatGPT / Perplexity 智能搜索重新设计的新一代静态企业落地页。48 小时极速交付，让你的业务在 AI 时代获得“搜得到、读得懂、信得过”的数字通行证。</p>
-      <p class="hero-pain">80% 的海外高端客户正在使用 AI 寻找服务商，但你的传统网站对 AI 爬虫完全隐形。我们帮你重构网页结构，变成 AI 引擎的首选答案。</p>
-      <div class="btn-group">
-        <a href="#cta" class="btn btn-primary">48小时内，定制我的 AI-Ready 落地页</a>
-        <a href="#tech" class="btn btn-secondary">查看技术白皮书</a>
-      </div>
+      <a class="btn btn-primary nav-cta" href="#contact">
+        开始定制
+      </a>
     </div>
   </header>
 
-  <section class="problem" id="problem">
-    <div class="container">
-      <p class="section-label">The Problem</p>
-      <h2 class="display-sm">AI 时代的“隐形危机”</h2>
-      <p class="lead" style="color:#a8a29e; margin-top:1.25rem;">当意向客户已经开始用大模型决策时，你的网站却对它们保持沉默。</p>
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">AI-READY FOR EXPORT BUSINESS</div>
 
-      <div class="problem-grid">
-        <div class="problem-card">
-          <h3>客户在问，AI 却推荐了别人</h3>
-          <p>“当你的意向客户在 ChatGPT 提问：‘美国加州有哪些精密的中国模具供应商？’，AI 给出的推荐名单里，为什么没有你？”</p>
+        <h1>
+          让 AI 找到你的企业<br />
+          <span class="gradient-text">让海外客户看懂你的价值</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          专为外贸企业打造的 AI 销售落地页。
+          将你的产品、规格、认证、案例、交付能力和联系方式，
+          整理成 AI 能够理解、客户能够阅读、销售能够使用的专业页面。
+        </p>
+
+        <div class="btn-group">
+          <a href="#contact" class="btn btn-primary">
+            48 小时上线我的 AI 销售页
+          </a>
+          <a href="#technology" class="btn btn-secondary">
+            查看技术方案
+          </a>
         </div>
-        <div class="problem-card">
-          <h3>网站排名尚可，AI 却读不懂</h3>
-          <p>你的网站在 Google 排名可能还可以，但因为结构混乱、没有配置 AI 通行证，大模型根本“读不懂”你的业务，甚至在回答中产生“幻觉”抹杀你的优势。</p>
+
+        <p class="hero-note">
+          搜得到 · 读得懂 · 信得过 · 愿意询盘
+        </p>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section" id="problem">
+      <div class="container">
+        <div class="eyebrow">THE PROBLEM</div>
+
+        <h2 class="section-title">
+          AI 时代，客户可能在联系你之前就已经做出了选择
+        </h2>
+
+        <p class="section-desc">
+          海外买家正在使用 Google、ChatGPT、Perplexity 等工具研究供应商、
+          比较产品并筛选合作伙伴。如果 AI 和客户无法快速理解你的企业，
+          机会可能在询盘发生之前就已经流失。
+        </p>
+
+        <div class="problem-grid">
+          <article class="card">
+            <div class="card-number">01 / DISCOVERABILITY</div>
+            <h3>客户找不到你</h3>
+            <p>
+              你的企业可能拥有多年行业经验，但 AI 未必知道你是谁、
+              做什么产品，以及你服务哪些市场。
+            </p>
+            <ul>
+              <li>公司定位不够清晰</li>
+              <li>产品信息没有结构化整理</li>
+              <li>重要内容隐藏在图片或 PDF 中</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-number">02 / CLARITY</div>
+            <h3>客户看不懂你</h3>
+            <p>
+              网站内容很多，却没有按照客户的采购逻辑回答真正重要的问题。
+            </p>
+            <ul>
+              <li>能否定制</li>
+              <li>MOQ 和交期是多少</li>
+              <li>有哪些认证和出口经验</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-number">03 / TRUST</div>
+            <h3>客户不够信任你</h3>
+            <p>
+              外贸采购需要确认企业的真实性、生产能力、质量控制和交付能力。
+            </p>
+            <ul>
+              <li>真实案例和客户行业</li>
+              <li>生产能力和质量流程</li>
+              <li>认证、检测和交付记录</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="quote-box">
+          客户不只是想看到你的产品，
+          <strong>他们想知道你是否能够解决自己的采购问题。</strong>
         </div>
       </div>
+    </section>
 
-      <p class="problem-stat">传统 SEO 正在发生剧变。如果你不主动为 AI 优化，在多百万美元的跨国大单谈判开始前，你可能就已经被 AI 决策助手无形中过滤掉了。</p>
-    </div>
-  </section>
+    <!-- Solution -->
+    <section class="section" id="solution">
+      <div class="container">
+        <div class="eyebrow">THE SOLUTION</div>
 
-  <section id="solution">
-    <div class="container">
-      <p class="section-label">The Solution</p>
-      <div class="solution-intro">
-        <h2 class="display-sm">AI-Ready Business Landing Page</h2>
-        <p class="lead" style="margin-top:1.25rem;">这不是一个普通的网站模板，而是一套将生成式引擎优化底层能力完美封装的企业级数字窗口。</p>
-      </div>
+        <h2 class="section-title">
+          AI-Ready：让你的官网成为一个 AI 销售窗口
+        </h2>
 
-      <div class="solution-pills">
-        <div class="pill"><strong>人看懂</strong> — 精美、极简、高转化率的前端视觉</div>
-        <div class="pill"><strong>AI 读懂</strong> — 语义化 HTML 与结构化数据对齐</div>
-        <div class="pill"><strong>信得过</strong> — 权威实体绑定，降低 AI 幻觉</div>
-      </div>
-    </div>
-  </section>
+        <p class="section-desc">
+          这不是一个普通的网站模板。AI-Ready 将企业资料、客户问题、
+          销售内容和 AI 可读结构结合起来，帮助企业在客户决策前完成发现、
+          理解和信任建立。
+        </p>
 
-  <section id="values">
-    <div class="container">
-      <p class="section-label">Value Proposition</p>
-      <h2 class="display-sm">三大核心商业价值</h2>
+        <div class="value-grid">
+          <article class="card">
+            <div class="feature-number">01</div>
+            <h3>让客户看懂</h3>
+            <p>
+              用清晰、简洁、专业的页面，快速说明你的产品、优势、
+              能力和适用客户。
+            </p>
+          </article>
 
-      <div class="values-grid">
-        <div class="value-item">
-          <div class="num">01</div>
-          <h3>AI 通行无阻</h3>
-          <p>内置标准化的 llms.txt 和优化过的 robots.txt、sitemap.xml，主动向各大 AI 爬虫挥手示意：“这里有最精准的业务事实，请直接抓取！”</p>
+          <article class="card">
+            <div class="feature-number">02</div>
+            <h3>让 AI 读懂</h3>
+            <p>
+              用语义化网页结构、结构化数据和直接回答内容，
+              帮助 AI 更准确地识别你的企业和业务。
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="feature-number">03</div>
+            <h3>让客户信得过</h3>
+            <p>
+              将认证、案例、生产能力、质量流程和交付经验，
+              组织成可验证、易理解的信任内容。
+            </p>
+          </article>
         </div>
-        <div class="value-item">
-          <div class="num">02</div>
-          <h3>语义对齐，防止幻觉</h3>
-          <p>提供结构化的 Schema.org 数据和“直接回答”架构。让 ChatGPT、Claude 和 Perplexity 引用你时，能够精准吐出你的核心技术指标，而不是拼凑虚假信息。</p>
-        </div>
-        <div class="value-item">
-          <div class="num">03</div>
-          <h3>极速交付与无缝切换</h3>
-          <p>采用 80% 模版 + 20% 高级定制模式。你只需提供业务资料与域名，其余的底层重构、代码部署、CDN 加速全部由我们 48 小时内一站式搞定。</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section>
-    <div class="container">
-      <p class="section-label">Who It's For</p>
-      <h2 class="display-sm">谁最需要这个落地页？</h2>
-      <p class="lead" style="margin-top:1rem;">专为 B2B 专业服务企业设计的精准画像。</p>
-
-      <ul class="audience-list">
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          <div>
-            <h4>咨询公司</h4>
-            <p>需要把方法论和成功案例结构化喂给 AI。</p>
-          </div>
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <div>
-            <h4>出海 B2B 制造与贸易商</h4>
-            <p>面向海外高精密买家，消除询盘前的信任障碍。</p>
-          </div>
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          <div>
-            <h4>数字营销与 AI Agency</h4>
-            <p>用最新技术武装自己，作为自身实力的最好背书。</p>
-          </div>
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          <div>
-            <h4>独立顾问、会计师与招聘机构</h4>
-            <p>建立个人与机构的权威实体绑定（Entity Authority）。</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="tech" id="tech">
-    <div class="container">
-      <p class="section-label">Technical Specifications</p>
-      <h2 class="display-sm">硬核规格</h2>
-      <p class="lead" style="margin-top:1rem;">给技术总监看的底气。专业度，一目了然。</p>
-
-      <div class="tech-grid">
-        <div class="tech-item">
-          <h4>语义接口 · Semantic HTML5</h4>
-          <p>100% 结构化语义，无垃圾嵌套。机器可读，人类可感。</p>
-        </div>
-        <div class="tech-item">
-          <h4>结构化实体 · Schema.org JSON-LD</h4>
-          <p>支持 Organization, Service, FAQ, Specialist 实体绑定。</p>
-        </div>
-        <div class="tech-item">
-          <h4>主动爬虫引导 · AI Crawler Configuration</h4>
-          <p>专门针对 OpenAI、Anthropic、Perplexity 的协议调优。</p>
-        </div>
-        <div class="tech-item">
-          <h4>高可提取性 · AEO Direct Answer Blocks</h4>
-          <p>采用低熵事实分块和答案优先的 FAQ 排版。</p>
-        </div>
-        <div class="tech-item">
-          <h4>边缘原生加速 · Edge-Native Deployment</h4>
-          <p>默认托管至 Vercel / Cloudflare 边缘节点，追求 100 分 Lighthouse 体验。</p>
-        </div>
-        <div class="tech-item">
-          <h4>AI 通行证文件</h4>
-          <p>内置优化的 llms.txt、robots.txt、sitemap.xml，主动向 AI 引擎示意。</p>
+        <div class="quote-box">
+          让客户更快了解你，销售更少重复解释，
+          <strong>询盘更接近真实采购需求。</strong>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <div class="container">
-      <p class="section-label">How It Works</p>
-      <h2 class="display-sm">极简三步，48 小时上线</h2>
+    <!-- Business Value -->
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">VALUE PROPOSITION</div>
 
-      <div class="process-steps">
-        <div class="process-step">
-          <h3>提交资料</h3>
-          <p>填写极简业务信息表：域名、核心业务、服务规格、团队资质。我们只拿必要信息。</p>
-        </div>
-        <div class="process-step">
-          <h3>极速配置</h3>
-          <p>团队完成 80% 代码模板与 20% 业务实体的个性化配置与语义重构。</p>
-        </div>
-        <div class="process-step">
-          <h3>48H 交付上线</h3>
-          <p>帮客户托管部署上线，交付可以直接被大模型和真实用户无缝读取的高性能页面。</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <h2 class="section-title">
+          三大核心商业价值
+        </h2>
 
-  <section id="pricing">
-    <div class="container">
-      <p class="section-label">Pricing</p>
-      <h2 class="display-sm">标准化服务与阶梯定价</h2>
-      <p class="lead" style="margin-top:1rem;">为了加快资金回转周期，采用极简无压力的购买流程。</p>
+        <p class="section-desc">
+          技术只是基础，最终目标是改善客户从发现企业到提交询盘之间的关键环节。
+        </p>
 
-      <div class="pricing-grid">
-        <div class="price-card featured">
-          <div class="badge">主推</div>
-          <h3>AI-Ready Business Landing Page</h3>
-          <p class="desc muted">标准化极速建站</p>
-          <div class="price">$199–399 <span>/ ¥1,500–3,000</span></div>
-          <ul>
-            <li>品牌色定制与文案适配</li>
-            <li>SEO Heading 优化</li>
-            <li>Semantic HTML + JSON-LD 生成</li>
-            <li>FAQ / AEO 模块部署</li>
-            <li>llms.txt 配置</li>
-            <li>一键代部署上线</li>
-          </ul>
-          <a href="#cta" class="btn btn-primary">立即定制</a>
-        </div>
+        <div class="value-grid">
+          <article class="card">
+            <div class="card-number">01 / FIND</div>
+            <h3>让客户更容易找到你</h3>
+            <p>
+              围绕行业、产品和目标市场，整理海外客户可能提出的采购问题，
+              清晰表达你的企业定位和业务能力。
+            </p>
+            <ul>
+              <li>企业类型和核心产品</li>
+              <li>目标行业和国家</li>
+              <li>认证、产能与差异化优势</li>
+            </ul>
+          </article>
 
-        <div class="price-card">
-          <h3>AI-Ready Page + AI Visibility Setup</h3>
-          <p class="desc muted">尊享可见性起步方案</p>
-          <div class="price">$499–999 <span>/ ¥3,000–7,000</span></div>
-          <ul>
-            <li>主推款全部内容</li>
-            <li>建立 30 个目标问题的 AI 搜索基准报告</li>
-            <li>为后续 AI Visibility Audit 深度服务铺垫</li>
-            <li>更高优先级的实体绑定与优化</li>
-          </ul>
-          <a href="#cta" class="btn btn-secondary">选择此方案</a>
+          <article class="card">
+            <div class="card-number">02 / UNDERSTAND</div>
+            <h3>让客户更快做出判断</h3>
+            <p>
+              按照海外买家的采购逻辑重新组织内容，让客户快速判断
+              你的产品和能力是否适合自己的需求。
+            </p>
+            <ul>
+              <li>产品规格和应用场景</li>
+              <li>MOQ、交期和定制能力</li>
+              <li>样品、认证和出口经验</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-number">03 / CONVERT</div>
+            <h3>让询盘更接近成交</h3>
+            <p>
+              将核心优势、案例、质量流程和询盘入口放在正确的位置，
+              帮助客户在联系销售前完成基础了解。
+            </p>
+            <ul>
+              <li>减少重复解释</li>
+              <li>提高有效询盘比例</li>
+              <li>帮助销售聚焦高价值客户</li>
+            </ul>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="faq">
-    <div class="container-narrow">
-      <p class="section-label">FAQ</p>
-      <h2 class="display-sm">常见疑问</h2>
+    <!-- Buyer Questions -->
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">BUYER QUESTIONS</div>
 
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>我已经有官网了，为什么还要买这个落地页？</summary>
-          <p>传统官网往往体量庞大、代码陈旧且存在大量不利于 AI 爬取的杂音。这个 Landing Page 作为一个“AI 特使页面”，可以作为你现有域名的子域名（如 ai.yourcompany.com）或独立推广页，专为高价值 AI 搜索流量进行截流，与现有官网不冲突。</p>
-        </details>
-        <details class="faq-item">
-          <summary>你们能保证大模型 100% 推荐我吗？</summary>
-          <p>没有任何人能控制闭源大模型的输出。但我们能做到的是<strong>消除结构障碍</strong>。如果你的网页没有结构化 Schema 和 FAQ 直接回答模块，AI 推荐你的概率接近于 0；通过配置我们的落地页，你将直接进入 AI 爬虫的“第一梯队可读取源”。</p>
-        </details>
-        <details class="faq-item">
-          <summary>48 小时真的能上线吗？</summary>
-          <p>是的。我们通过“80% 标准化代码 + 20% 深度配置”的流水线作业，只要您在付款后提供完整的业务基础表格并授权域名解析，我们就能在 48 小时内让页面上线。</p>
-        </details>
+        <h2 class="section-title">
+          海外客户通常会这样寻找供应商
+        </h2>
+
+        <p class="section-desc">
+          AI-Ready 会围绕真实采购问题组织你的业务信息，让 AI 和客户更容易
+          把“问题”与你的企业对应起来。
+        </p>
+
+        <div class="tech-grid">
+          <article class="card tech-item">
+            <div class="tech-label">QUESTION 01</div>
+            <h3>寻找合适的供应商</h3>
+            <p>
+              “Which Chinese manufacturers can supply precision moulds
+              for automotive parts?”
+            </p>
+          </article>
+
+          <article class="card tech-item">
+            <div class="tech-label">QUESTION 02</div>
+            <h3>确认定制能力</h3>
+            <p>
+              “Who can produce custom stainless steel parts with low MOQ?”
+            </p>
+          </article>
+
+          <article class="card tech-item">
+            <div class="tech-label">QUESTION 03</div>
+            <h3>确认交期与出口能力</h3>
+            <p>
+              “Which supplier can ship industrial components to Germany
+              within 30 days?”
+            </p>
+          </article>
+
+          <article class="card tech-item">
+            <div class="tech-label">QUESTION 04</div>
+            <h3>比较产品与企业差异</h3>
+            <p>
+              “Which supplier has ISO certification and experience with
+              European buyers?”
+            </p>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="closing" id="cta">
-    <div class="container">
-      <h2 class="display-sm">流量的规则已经改变</h2>
-      <p class="lead">当你的竞争对手还在传统 SEO 里卷关键词时，领先的 B2B 服务商已经开始将网站重构为 AI 的答案节点。</p>
-      <a href="#" class="btn btn-primary">抢占 AI 搜索先机：立即定制您的 AI-Ready 落地页</a>
-    </div>
-  </section>
+    <!-- Audience -->
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">WHO IT'S FOR</div>
 
-  <footer>
+        <h2 class="section-title">
+          哪些外贸企业最需要 AI-Ready？
+        </h2>
+
+        <div class="audience-grid">
+          <article class="card">
+            <h3>出口制造商</h3>
+            <p>
+              快速展示产品、产能、质量标准、认证和定制能力。
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>B2B 贸易商</h3>
+            <p>
+              清晰表达产品组合、供应链整合能力、采购和出口服务。
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>工业品与专业设备企业</h3>
+            <p>
+              将复杂规格、应用场景、行业标准和技术参数整理成客户容易理解的内容。
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>官网有流量但转化低的企业</h3>
+            <p>
+              不必立即重做整个官网，可以先增加一个面向 AI 搜索和高价值客户的销售入口。
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>依赖展会和主动开发的企业</h3>
+            <p>
+              为客户提供一个专业、清晰、可信的后续了解和询盘页面。
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>外贸营销机构与 AI Agency</h3>
+            <p>
+              用标准化、可交付的 AI-Ready 页面，为客户提供新一代海外获客服务。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology -->
+    <section class="section" id="technology">
+      <div class="container">
+        <div class="eyebrow">TECHNICAL SPECIFICATIONS</div>
+
+        <h2 class="section-title">
+          技术负责可读性，内容负责转化
+        </h2>
+
+        <p class="section-desc">
+          给技术人员看的底层能力，也用外贸老板能理解的方式说明它们的商业价值。
+        </p>
+
+        <div class="tech-grid">
+          <article class="card tech-item">
+            <div class="tech-label">STRUCTURE</div>
+            <h3>语义化页面结构</h3>
+            <p>
+              将公司、产品、服务、规格和联系方式按照清晰的网页结构呈现，
+              让机器更容易读取，客户也更容易浏览。
+            </p>
+            <code>Semantic HTML5</code>
+          </article>
+
+          <article class="card tech-item">
+            <div class="tech-label">ENTITY</div>
+            <h3>企业实体标注</h3>
+            <p>
+              清楚标注企业、产品、服务、FAQ 和专业人员等信息，
+              帮助搜索系统理解你是谁、提供什么、服务谁。
+            </p>
+            <code>Schema.org / JSON-LD</code>
+          </article>
+
+          <article class="card tech-item">
+            <div class="tech-label">ANSWERS</div>
+            <h3>直接回答采购问题</h3>
+            <p>
+              围绕海外客户真实的采购问题，创建简洁明确的答案模块，
+              减少客户反复询问基础信息。
+            </p>
+            <code>FAQ / AEO Direct Answer Blocks</code>
+          </article>
+
+          <article class="card tech-item">
+            <div class="tech-label">CRAWLABILITY</div>
+            <h3>AI 可读取配置</h3>
+            <p>
+              配置 robots.txt、sitemap.xml 和相关页面信息，
+              帮助搜索系统更顺畅地发现重要内容。
+            </p>
+            <code>robots.txt / sitemap.xml / llms.txt</code>
+          </article>
+
+          <article class="card tech-item">
+            <div class="tech-label">PERFORMANCE</div>
+            <h3>高速页面部署</h3>
+            <p>
+              采用轻量化页面和现代化部署方式，提升海外访问速度，
+              减少客户因加载缓慢而离开。
+            </p>
+            <code>Edge-Native Deployment</code>
+          </article>
+
+          <article class="card tech-item">
+            <div class="tech-label">VISIBILITY</div>
+            <h3>AI 可见性基准测试</h3>
+            <p>
+              围绕产品、行业、地区和目标客户建立 AI 搜索问题，
+              观察 AI 是否正确理解你的企业。
+            </p>
+            <code>AI Visibility Baseline</code>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conversion Content -->
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">CONVERSION CONTENT</div>
+
+        <h2 class="section-title">
+          每一个重要采购问题，都应该成为一个转化机会
+        </h2>
+
+        <p class="section-desc">
+          AI-Ready 不只是调整技术结构，还会帮助你梳理影响询盘和成交的业务内容。
+        </p>
+
+        <div class="value-grid">
+          <article class="card">
+            <h3>客户想了解什么？</h3>
+            <ul>
+              <li>你具体生产什么</li>
+              <li>适合哪些行业和国家</li>
+              <li>是否支持 OEM / ODM</li>
+              <li>MOQ 和交期是多少</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>客户如何确认你可靠？</h3>
+            <ul>
+              <li>工厂和公司信息</li>
+              <li>相关认证和检测</li>
+              <li>真实客户案例</li>
+              <li>生产与质量控制流程</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>客户下一步做什么？</h3>
+            <ul>
+              <li>获取报价</li>
+              <li>提交图纸或采购清单</li>
+              <li>申请样品</li>
+              <li>预约视频会议</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="eyebrow">HOW IT WORKS</div>
+
+        <h2 class="section-title">
+          极简三步，48 小时上线
+        </h2>
+
+        <p class="section-desc">
+          采用标准化页面框架和业务内容配置流程，快速建立你的 AI 销售入口。
+        </p>
+
+        <div class="process-grid">
+          <article class="card step-card">
+            <div class="step-number">01</div>
+            <h3>提交业务资料</h3>
+            <p>
+              提供公司、产品、目标市场、认证、案例、生产能力和联系方式等基础资料。
+            </p>
+          </article>
+
+          <article class="card step-card">
+            <div class="step-number">02</div>
+            <h3>梳理销售内容</h3>
+            <p>
+              将企业资料转换成客户和 AI 都容易理解的定位、产品、优势、FAQ 和信任内容。
+            </p>
+          </article>
+
+          <article class="card step-card">
+            <div class="step-number">03</div>
+            <h3>部署并上线</h3>
+            <p>
+              完成页面设计、内容配置和技术部署后，发布到你的域名、子域名或指定地址。
+            </p>
+          </article>
+        </div>
+
+        <div class="quote-box">
+          80% 标准化框架 +
+          <strong>20% 业务定制</strong>
+          ，兼顾交付效率与企业差异化。
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="eyebrow">PRICING</div>
+
+        <h2 class="section-title">
+          标准化服务与阶梯定价
+        </h2>
+
+        <p class="section-desc">
+          用较低的试错成本，先建立企业在 AI 搜索时代的清晰入口。
+        </p>
+
+        <div class="pricing-grid">
+          <article class="card price-card">
+            <h3>AI-Ready Business Landing Page</h3>
+            <h4>标准化 AI 销售落地页</h4>
+
+            <div class="price">$199–399 / ¥1,500–3,000</div>
+
+            <ul>
+              <li>企业定位和页面内容适配</li>
+              <li>品牌色和基础视觉定制</li>
+              <li>产品与服务结构整理</li>
+              <li>Semantic HTML 页面结构</li>
+              <li>Schema.org JSON-LD 结构化数据</li>
+              <li>FAQ / AEO 问答模块</li>
+              <li>robots.txt 和 sitemap.xml 配置</li>
+              <li>llms.txt 配置</li>
+              <li>基础询盘入口</li>
+              <li>一键代部署上线</li>
+              <li>48 小时交付</li>
+            </ul>
+
+            <a href="#contact" class="btn btn-secondary">
+              立即定制
+            </a>
+          </article>
+
+          <article class="card price-card featured">
+            <span class="price-badge">主推方案</span>
+
+            <h3>AI-Ready Page + AI Visibility Setup</h3>
+            <h4>尊享 AI 可见性起步方案</h4>
+
+            <div class="price">$499–999 / ¥3,000–7,000</div>
+
+            <ul>
+              <li>包含标准版全部内容</li>
+              <li>30 个目标 AI 搜索问题</li>
+              <li>目标国家、行业和产品关键词梳理</li>
+              <li>AI 搜索基准测试</li>
+              <li>企业与产品实体关系优化</li>
+              <li>目标采购场景内容优化</li>
+              <li>高价值客户常见问题整理</li>
+              <li>AI 可见性初始报告</li>
+              <li>后续 AI Visibility Audit 服务基础</li>
+            </ul>
+
+            <a href="#contact" class="btn btn-primary">
+              选择此方案
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="eyebrow">FAQ</div>
+
+        <h2 class="section-title">
+          常见疑问
+        </h2>
+
+        <div class="faq-list">
+          <details>
+            <summary>我已经有官网了，为什么还需要 AI-Ready？</summary>
+            <p>
+              AI-Ready 可以作为现有官网的补充页面，专门服务于 AI 搜索理解、
+              海外客户判断和外贸询盘转化。不需要立即重做整个官网。
+            </p>
+          </details>
+
+          <details>
+            <summary>AI-Ready 能保证 ChatGPT 一定推荐我的公司吗？</summary>
+            <p>
+              不能保证任何 AI 系统一定推荐某家公司。AI-Ready 的作用是改善企业信息的结构、
+              清晰度和可读取性，帮助 AI 更准确地发现、理解和引用企业内容。
+            </p>
+          </details>
+
+          <details>
+            <summary>AI-Ready 与普通 SEO 有什么不同？</summary>
+            <p>
+              普通 SEO 主要关注关键词、收录和搜索排名。AI-Ready 进一步关注 AI 是否理解企业、
+              产品、客户场景、优势和联系方式。两者可以结合使用。
+            </p>
+          </details>
+
+          <details>
+            <summary>48 小时真的能上线吗？</summary>
+            <p>
+              采用标准化页面框架和业务内容配置流程，只要资料完整并及时完成域名或部署授权，
+              通常可以在 48 小时内完成页面上线。复杂的多语言网站和完整官网重构不属于标准交付范围。
+            </p>
+          </details>
+
+          <details>
+            <summary>我需要准备什么资料？</summary>
+            <p>
+              建议准备公司简介、产品目录、产品参数、目标国家、认证资质、生产能力、
+              质量流程、客户案例、图片、视频以及邮箱、WhatsApp 等联系方式。
+            </p>
+          </details>
+
+          <details>
+            <summary>这个页面适合工厂还是贸易公司？</summary>
+            <p>
+              工厂和贸易公司都适合。工厂可以重点展示生产、质量和定制能力；
+              贸易公司可以重点展示产品组合、供应链、出口和交付服务。
+            </p>
+          </details>
+
+          <details>
+            <summary>AI-Ready 会直接提高我的转化率吗？</summary>
+            <p>
+              AI-Ready 不能替代产品质量、报价竞争力、销售跟进和交付能力，
+              但可以改善客户发现、理解、信任和联系企业之前的关键环节，
+              帮助提升有效询盘质量。
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section" id="contact">
+      <div class="container cta-content">
+        <div class="eyebrow">AI-READY FOR THE NEXT SEARCH</div>
+
+        <h2>
+          不要只让客户看到你
+          <br />
+          <span class="gradient-text">让客户理解你、信任你，并愿意联系你</span>
+        </h2>
+
+        <p>
+          为外贸企业建立面向 AI 搜索和海外客户的清晰销售入口。
+          让 AI 找到你的企业，让客户看懂你的价值，让询盘更接近成交。
+        </p>
+
+        <div class="btn-group">
+          <a
+            class="btn btn-primary"
+            href="mailto:info@iaigeo.com?subject=AI-Ready 外贸企业落地页咨询"
+          >
+            48 小时内定制我的 AI-Ready 页面
+          </a>
+
+          <a class="btn btn-secondary" href="#pricing">
+            查看方案与价格
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="logo">AI<span style="color:var(--accent)">Ready</span></div>
-      <p>© 2026 AI-Ready Landing Page. Built for people and AI search.</p>
+      <div class="logo">
+        <span class="logo-mark"></span>
+        <span>AI-Ready</span>
+      </div>
+
+      <div>
+        © 2026 AI-Ready Landing Page.
+        Built for people, sales and AI search.
+      </div>
     </div>
   </footer>
-
-  <script>
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
-  </script>
 </body>
 </html>
